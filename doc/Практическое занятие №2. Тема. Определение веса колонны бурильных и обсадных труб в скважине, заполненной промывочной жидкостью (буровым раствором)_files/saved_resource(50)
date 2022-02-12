@@ -1,0 +1,2625 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+    <meta charset="UTF-8"><script type="text/javascript" src="/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=nUCgBiqFd0waQ0DbSUoL4kGRZMe5TDF7UP5tyinMe8gkp8RqQff6ILC4OVD2CCEsziaD0ZWLfgdU95W4HTUmtgdoNxbUERls12Qe_196ydhJ6HQSaeO7sJ_B10B9cuPCUasM2jew3p6wmPrfiYKw98EsgK3aTJ03Odu3jwBHe-w" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9leHBlcmllbmNlLnRyaXBzdGVyLnJ1Lz91dG1fY2FtcGFpZ249YWZmaWxpYXRlcyZ1dG1fbWVkaXVtPWxpbmsmdXRtX3NvdXJjZT10b3VyaXN0aWt0YWxlcw"/><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"a35ba27147",applicationID:"2032083"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","queueTime":3,"licenseKey":"a35ba27147","agent":"","transactionName":"ZwEAYUFRC0MHABBcVl5LJEBdUxFZCQ1LVlZCAUxDWlUSQ0gPBVtdWQoFD19RC1QPDQM=","applicationID":"2032083","errorBeacon":"bam-cell.nr-data.net","applicationTime":58}</script>
+    <title>
+    Необычные экскурсии от местных жителей
+</title>
+    
+    
+    
+
+
+    <meta name="msapplication-config" content="none"/>
+    <meta content="s3eYPsIswtyzx8zEX5j4qxYoPJgcCIqqrcBffAmJKRooFABGSErnA6uLJ691js3a" name="csrf-token" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/i/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-startup-image" href="/static/i/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/i/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/i/favicon/favicon-16x16.png">
+    <link rel="mask-icon" sizes="any" href="/static/i/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/static/i/favicon/favicon.ico">
+
+    <link rel="manifest" href="/static/i/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Tripster">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+
+    
+    <link type="text/css" href="/static_frontend/bundles/css/base_styles.ea58b5fb.css" rel="stylesheet" />
+    <link type="text/css" href="/static_frontend/bundles/css/landing_styles.4c59b5c3.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/slick/slick.css?v=&quot;72fca80e&quot;">
+
+
+    
+
+    <script>
+        window.APP_VERSION = Number('"72fca80e"');
+        window.INVITE_ACTIVE = false;
+        var dataLayer = [{
+            
+            ExperienceUserRole: "unknown"
+        }];
+    </script>
+    
+    
+<!-- Google Tag Manager -->
+<script>
+(function(w, d, s, l, i) {
+    w.GTM_LOAD_EVENT = 'load:gtm';
+    w[l] = w[l] || [];
+    w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+    });
+
+    const f = d.getElementsByTagName(s)[0];
+    const j = d.createElement(s);
+    const dl = l !== 'dataLayer' ? '&l=' + l : '';
+
+    j.async = true;
+    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl+'&gtm_auth=8MMhEdgP3HLmNTRAKjQ3-g&gtm_preview=env-10&gtm_cookies_win=x';
+    j.addEventListener('load', function () {
+        window.addEventListener('load', function () {
+            const ge = new CustomEvent(w.GTM_LOAD_EVENT, { bubbles: true });
+            setImmediate(() => d.dispatchEvent(ge));
+        });
+    });
+
+    f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-MZRPDJ');
+</script>
+<!-- End Google Tag Manager -->
+
+
+
+    
+<script type="text/javascript" src="/static_frontend/bundles/js/experiments.fef3563f.js" ></script>
+
+
+    
+        
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/svg4everybody/2.1.9/svg4everybody.min.js"></script>
+<script>if (window.svg4everybody) svg4everybody(); </script>
+
+
+    <script src="/static/js/jquery-1.9.1.min.js"></script>
+
+
+<script type="text/javascript" src="/static_frontend/bundles/js/common.db171cd5.js" ></script>
+<script type="text/javascript" src="/static_frontend/bundles/js/common_js_include.6aa86b0d.js" ></script>
+
+
+    <script src="/static/js/backbone-min.js?v=&quot;72fca80e&quot;"></script>
+    <script src="/static/spin.js/spin.min.js?v=&quot;72fca80e&quot;"></script>
+
+
+<script src="/static/spin.js/jquery.spin.js?v=&quot;72fca80e&quot;"></script>
+<script src="/static/js/experience.const.js?v=&quot;72fca80e&quot;"></script>
+
+    
+
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url" content="https://experience.tripster.ru" />
+    <meta property="og:title" content="Необычные экскурсии от местных жителей"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tripster.ru" />
+    <meta property="og:locale" content="ru_RU" />
+    
+        <meta property="og:description" content="Необычные экскурсии в 631 городе мира. Гиды — историки, журналисты, архитекторы и другие люди, которые умеют увлечь своими знаниями. Все экскурсии на русском, индивидуальные — для вас и вашей компании. На сайте больше 215000 отзывов!" />
+        <meta name="description" content="Необычные экскурсии в 631 городе городах мира. Гиды — историки, журналисты, архитекторы и другие люди, которые умеют увлечь своими знаниями. Все экскурсии на русском, индивидуальные — для вас и вашей компании. На сайте больше 215000 отзывов!" />
+    
+    <meta property="fb:app_id" content="171029459579773" />
+    <meta property="fb:pages" content="111586305521064" />
+    <meta property="og:image" content="https://experience.tripster.ru/static/i/mainpage_share.jpg" />
+    <meta property="og:image:width" content="968">
+    <meta property="og:image:height" content="504">
+    <link rel="image_src" href="https://experience.tripster.ru/static/i/mainpage_share.jpg" />
+
+</head>
+
+<body class="white-line">
+    
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZRPDJ&gtm_auth=8MMhEdgP3HLmNTRAKjQ3-g&gtm_preview=env-10&gtm_cookies_win=x"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+    
+        <div class="page ">
+            
+
+            
+
+
+
+
+
+
+
+
+    
+        
+    
+    
+
+<link type="text/css" href="/static_frontend/bundles/css/site_header.28a11261.css" rel="stylesheet" />
+
+<site-header>
+    
+
+
+    
+
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     style="position: absolute; width: 0; height: 0">
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.239 30.239" id="search">
+        <path d="M20.194 3.46c-4.613-4.613-12.121-4.613-16.734 0-4.612 4.614-4.612 12.121 0 16.735 4.108 4.107 10.506 4.547 15.116 1.34.097.459.319.897.676 1.254l6.718 6.718a2.498 2.498 0 0 0 3.535 0 2.496 2.496 0 0 0 0-3.535l-6.718-6.72a2.5 2.5 0 0 0-1.253-.674c3.209-4.611 2.769-11.008-1.34-15.118zm-2.121 14.614c-3.444 3.444-9.049 3.444-12.492 0-3.442-3.444-3.442-9.048 0-12.492 3.443-3.443 9.048-3.443 12.492 0 3.444 3.444 3.444 9.048 0 12.492z"></path>
+    </symbol>
+</svg>
+
+<div class="site-header" style="">
+    <div class="wrap">
+        <div class="inner">
+            <div class="site-logo"><a href="https://experience.tripster.ru" class="logo-link"><img
+                    alt="Авторские экскурсии на Tripster.ru" src="/static/i/logo.png" class="logo-img"></a>
+            </div>
+            <div class="right">
+                <div class="search-wrap" style="">
+                    <div class="search">
+                        <form autocomplete="off" class="search-form" style="">
+                            <div class="search__control">
+                                <input type="text" name="q" autocomplete="off"
+                                       autocorrect="off" autocapitalize="off"
+                                       placeholder="Куда вы едете?" class="gtm-site_search">
+                            </div>
+                            <div class="search-btn new-button_green">
+                                <i class="icon">
+                                    <svg role="img">
+                                        <use xlink:href="#search"></use>
+                                    </svg>
+                                </i>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <nav class="menu">
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="https://experience.tripster.ru/about/"
+                               class="menu-link">О проекте</a>
+                        </li>
+                        
+                    </ul>
+                    <div class="contacts"><div class="contacts-control"><div class="control__text">Помощь</div></div></div>
+                    <div class="favorites">
+                        <a href="https://experience.tripster.ru/favorites/">
+                            <svg width="20" height="18" viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.44425 16.2551C9.62459 16.413 9.856 16.5 10.096 16.5C10.3359 16.5 10.5675 16.413 10.7477 16.2553C11.4303 15.6584 12.088 15.0978 12.6684 14.6033L12.6686 14.6031C14.3669 13.1558 15.8334 11.906 16.8539 10.6745C17.9948 9.29804 18.526 7.99281 18.526 6.56693C18.526 5.18157 18.0511 3.90348 17.1886 2.96794C16.3159 2.02134 15.1182 1.5 13.8162 1.5C12.843 1.5 11.9517 1.80769 11.1671 2.41444C10.7711 2.72071 10.4123 3.09555 10.096 3.53277C9.77985 3.09555 9.42096 2.72071 9.02504 2.41444C8.24051 1.80769 7.34922 1.5 6.37599 1.5C5.07386 1.5 3.87629 2.02134 3.00353 2.96794C2.14105 3.90348 1.66602 5.18157 1.66602 6.56693C1.66602 7.99281 2.19739 9.29804 3.33823 10.6747C4.35879 11.906 5.82558 13.1561 7.52416 14.6036L7.52712 14.6062C8.10648 15.0998 8.76314 15.6595 9.44425 16.2551Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="details">
+                        
+                            <a href="https://experience.tripster.ru/login/" class="login-link j-login-link">Войти</a>
+                        
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-search__controls">
+        <div class="mobile-search__open" style="">
+            <svg role="img">
+                <use xlink:href="#search"></use>
+            </svg>
+        </div>
+    </div>
+    <div class="mobile-menu">
+        <div class="mobile-control-wrap">
+            <span class="mobile__control">
+                <i>
+                    
+                </i>
+            </span>
+        </div>
+        <div class="mobile-menu"></div>
+    </div>
+</div>
+
+<style>
+.site-header {
+	font-family: 'Museo Sans', -apple-system, BlinkMacSystemFont, Arial, Helvetica Neue, sans-serif;
+	border-bottom: 1px solid #b8b8ba;
+	background: #f6f8f7;
+	background: linear-gradient(to bottom, #f6f8f7 0%, #f2f2f2 47%, #edeef0 100%);
+}
+
+@media only screen and (max-width: 767px) {
+	.site-header {
+		position: relative;
+		border: 0;
+		background: #f6f8f7;
+	}
+}
+
+@media print {
+	.site-header {
+		justify-content: center;
+		background: none;
+		border: 0;
+	}
+}
+
+.site-header > .wrap > .inner {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 78px;
+	width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+	.site-header > .wrap > .inner {
+		justify-content: space-around;
+		height: 55px;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.site-header > .wrap > .inner {
+		justify-content: center;
+	}
+}
+
+@media print {
+	.site-header > .wrap > .inner {
+		justify-content: center;
+		height: auto;
+		padding: 20px 0 0;
+	}
+}
+
+.site-header > .wrap > .inner > .right {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex: 1;
+	margin-left: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+	.site-header > .wrap > .inner > .right {
+		flex: none;
+		margin-left: 10px;
+	}
+}
+
+@media print {
+	.site-header > .wrap > .inner > .right {
+		display: none;
+	}
+}
+
+.site-header > .wrap > .inner > .right > .menu {
+	display: flex;
+	align-items: center;
+}
+
+@media only screen and (max-width: 767px) {
+	.site-header > .wrap > .inner > .right > .menu {
+		display: none;
+	}
+}
+
+.site-header .login-link {
+	font-size: 12px;
+	margin-right: 15px;
+	color: #d42764;
+	text-decoration: none;
+}
+
+.site-header .favorites {
+	position: relative;
+	display: inline-flex;
+	width: 60px;
+	margin: 0 -7px 0 13px;
+}
+
+.site-header .favorites:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: calc(50% - 20px);
+	width: 1px;
+	height: 40px;
+	background: linear-gradient(to bottom, rgba(208, 209, 209, 0.3) 0%, #d0d1d1 50%, rgba(208, 209, 209, 0.3) 100%);
+}
+
+.site-header .favorites a {
+	position: relative;
+	left: 3px;
+	margin: auto;
+}
+
+.site-header .favorites svg {
+	width: 20px;
+	height: 18px;
+	stroke-width: 2px;
+	stroke: #F14555;
+	fill: transparent;
+}
+
+.site-header .favorites-count {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	width: 13px;
+	height: 13px;
+	top: -5px;
+	right: -5px;
+	background: #D42764;
+	font-size: 10px;
+	color: #fff;
+	font-weight: 700;
+	text-decoration: none;
+	border-radius: 2px;
+}
+
+.site-header .details {
+	position: relative;
+	padding: 0 0 0 7px;
+	margin: 0 0 0 13px;
+}
+
+.site-header .details:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: calc(50% - 20px);
+	width: 1px;
+	height: 40px;
+	background: linear-gradient(to bottom, rgba(208, 209, 209, 0.3) 0%, #d0d1d1 50%, rgba(208, 209, 209, 0.3) 100%);
+}
+
+.site-header .mobile-search__controls {
+	display: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 55px;
+}
+
+.site-header .mobile-search__controls svg {
+	display: block;
+	margin: auto;
+	cursor: pointer;
+}
+
+.site-header .search-wrap {
+	flex: 1;
+	height: 100%;
+	margin: 0 20px 0 0;
+}
+
+.site-header .search-wrap input[type=text] {
+	width: 100%;
+	height: 36px;
+	padding: 5px 20px 6px 7px;
+	font-family: 'Museo Sans', -apple-system, BlinkMacSystemFont, Arial, Helvetica Neue, sans-serif, sans-serif;
+	border-radius: 3px 0 0 3px;
+	box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+	margin: 0;
+	border: 0;
+	outline: none;
+	box-sizing: border-box;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.site-header .search-wrap input[type=text]::placeholder {
+	font-family: 'Museo Sans', -apple-system, BlinkMacSystemFont, Arial, Helvetica Neue, sans-serif;
+	font-size: 16px;
+	color: #a6a6ab;
+}
+
+.site-header .search-wrap .new-button_green {
+	position: relative;
+	display: inline-flex;
+	flex-shrink: 0;
+	padding: 0;
+	width: 40px;
+	height: 36px;
+	border-radius: 0 3px 3px 0;
+}
+
+.site-header .search-wrap .new-button_green .icon {
+	display: block;
+	width: 20px;
+	height: 20px;
+	margin: auto;
+}
+
+.site-header .search-wrap .new-button_green .icon svg {
+	fill: #fff;
+	width: 20px;
+	height: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+	.site-header .search-wrap .new-button_green .icon {
+		width: 24px;
+		height: 24px;
+	}
+
+	.site-header .search-wrap .new-button_green .icon svg {
+		width: 24px;
+		height: 24px;
+	}
+}
+
+.site-header .search-wrap .search__control {
+	flex: 1;
+}
+
+@media only screen and (max-width: 767px) {
+	.site-header .search-wrap {
+		position: absolute;
+		margin: 0;
+		top: 0;
+		right: 0;
+		left: 55px;
+		opacity: 0;
+		z-index: -1;
+		transition: all .2s ease;
+	}
+
+	.site-header .search-wrap .search {
+		width: 100%;
+		margin: 0;
+	}
+
+	.site-header .search-wrap input[type=text] {
+		height: 55px;
+		border-radius: 0;
+		box-shadow: none;
+	}
+
+	.site-header .search-wrap input[type=text].no_empty {
+		padding-right: calc(55px + 3px);
+	}
+
+	.site-header .search-wrap .new-button_green {
+		width: 55px;
+		height: 55px;
+		border-radius: 0;
+	}
+}
+
+.site-header .open.search-wrap {
+	margin: 0;
+	opacity: 1;
+	z-index: 400;
+}
+
+@media only screen and (max-width: 767px) {
+	.site-header .open .search .results, .site-header .open .search .ruler {
+		right: 0;
+		left: -55px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.site-header .wrap {
+		padding: 0;
+	}
+}
+
+.contacts {
+    position: relative;
+    margin: 0 -14px 0 12px;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.contacts-control {
+	position: relative;
+	padding: 8px 28px 8px 12px;
+	border-radius: 8px 8px 0 0;
+	box-sizing: border-box;
+}
+
+.contacts-control:before {
+	display: none;
+	content:'';
+	position: absolute;
+	bottom: -2px;
+	left: 0px;
+	right: 0px;
+	height: 3px;
+	background: #fff;
+}
+
+.contacts:before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: 15px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #e6729a;
+}
+@media only screen and (max-width: 850px) {
+    .contacts:before {
+        display: none;
+    }
+}
+.control {
+    position: relative;
+    padding: 8px 28px 8px 12px;
+    border-radius: 8px 8px 0 0;
+    box-sizing: border-box;
+}
+.control:before {
+    display: none;
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0px;
+    right: 0px;
+    height: 3px;
+    background: #fff;
+}
+
+.control__text {
+    position: relative;
+    font-size: 15px;
+    font-weight: 700;
+    color: #354859;
+    z-index: 3;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.control__text:after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: 6px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid rgba(0, 0, 0, 0);
+    border-right: 5px solid rgba(0, 0, 0, 0);
+    border-top: 7px solid #2a3f54;
+    transition: transform 0.1s ease;
+    will-change: transform;
+}
+</style>
+
+
+</site-header>
+
+
+
+
+
+            
+                
+
+<script>
+    var SiteHeaderData = {
+        currentUser: null,
+        impersonateUser: null,
+        isUnderImpersonate: false,
+        inviter_promocode_amount: 500,
+        invited_promocode_amount: 500,
+        
+        disableLoginPopup: false,
+        recaptcha: {
+            
+                is_enabled: true,
+                secret: "6LdzYMAUAAAAAEnpAScksFwmSP76zfPUgL7t-OJo"
+            
+        },
+    }
+</script>
+
+<script type="text/javascript" src="/static_frontend/bundles/js/common.db171cd5.js" ></script>
+<script type="text/javascript" src="/static_frontend/bundles/js/vue-common.e62ab4a0.js" ></script>
+<script type="text/javascript" src="/static_frontend/bundles/js/site_header.57c86f2b.js" ></script>
+
+            
+
+            
+    <div class="welcome-top">
+        <div class="welcome-top__text"><span>Необычные</span> экскурсии <br>от местных <span>жителей</span></div>
+    </div>
+    
+<landing-search></landing-search>
+<link type="text/css" href="/static_frontend/bundles/css/landing_search.0bd3217b.css" rel="stylesheet" />
+<script type="text/javascript" src="/static_frontend/bundles/js/landing_search.e26b0866.js" ></script>
+
+    <div class="wrap" id="online-exps">
+        <div class="welcome-exps">
+            <h1 class="welcome-title">631 город мира</h1>
+            <div class="welcome-cities">
+                
+                    <a href="/experience/Saint_Petersburg/"
+                               class="welcome-city"
+                               data-gtmtrigger="LinkClick"
+                               data-eventcategory="page_traveler_landing"
+                               data-eventaction="cities"
+                               data-eventlabel="https://experience.tripster.ru/experience/Saint_Petersburg/"
+                               data-eventnoninteraction="1"
+                               data-city-id="144"
+                               data-city-name="Санкт-Петербург"
+                               data-exps-count="441"
+                            ><img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/photos/4518c77e-c10a-4e0c-9c48-7b33c7eb0273.jpg" alt="" class="welcome-city__img"><div class="welcome-city__info"><h3 class="welcome-city__title">Санкт-Петербург</h3><div class="welcome-city__count">441 экскурсия</div></div></a><a href="/experience/Kaliningrad/"
+                               class="welcome-city"
+                               data-gtmtrigger="LinkClick"
+                               data-eventcategory="page_traveler_landing"
+                               data-eventaction="cities"
+                               data-eventlabel="https://experience.tripster.ru/experience/Kaliningrad/"
+                               data-eventnoninteraction="1"
+                               data-city-id="149"
+                               data-city-name="Калининград"
+                               data-exps-count="334"
+                            ><img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/photos/e1b01e18-e17c-4d14-b43c-cae02ebe3b7f.jpg" alt="" class="welcome-city__img"><div class="welcome-city__info"><h3 class="welcome-city__title">Калининград</h3><div class="welcome-city__count">334 экскурсии</div></div></a><a href="/experience/Antalya/"
+                               class="welcome-city"
+                               data-gtmtrigger="LinkClick"
+                               data-eventcategory="page_traveler_landing"
+                               data-eventaction="cities"
+                               data-eventlabel="https://experience.tripster.ru/experience/Antalya/"
+                               data-eventnoninteraction="1"
+                               data-city-id="83"
+                               data-city-name="Анталья"
+                               data-exps-count="49"
+                            ><img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/photos/b3a58a66-a7a6-4aaf-b860-020137fbb9f7.jpg" alt="" class="welcome-city__img"><div class="welcome-city__info"><h3 class="welcome-city__title">Анталья</h3><div class="welcome-city__count">49 экскурсий</div></div></a><a href="/experience/Moscow/"
+                               class="welcome-city"
+                               data-gtmtrigger="LinkClick"
+                               data-eventcategory="page_traveler_landing"
+                               data-eventaction="cities"
+                               data-eventlabel="https://experience.tripster.ru/experience/Moscow/"
+                               data-eventnoninteraction="1"
+                               data-city-id="146"
+                               data-city-name="Москва"
+                               data-exps-count="377"
+                            ><img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/photos/2361fc4c-f224-4fc4-947e-ca221cfa2afa.jpg" alt="" class="welcome-city__img"><div class="welcome-city__info"><h3 class="welcome-city__title">Москва</h3><div class="welcome-city__count">377 экскурсий</div></div></a><a href="/experience/Sochi/"
+                               class="welcome-city"
+                               data-gtmtrigger="LinkClick"
+                               data-eventcategory="page_traveler_landing"
+                               data-eventaction="cities"
+                               data-eventlabel="https://experience.tripster.ru/experience/Sochi/"
+                               data-eventnoninteraction="1"
+                               data-city-id="297"
+                               data-city-name="Сочи"
+                               data-exps-count="285"
+                            ><img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/thumbs2/fa50d174-52f3-11ea-a348-02d82f4896e8.384x289.jpg" alt="" class="welcome-city__img"><div class="welcome-city__info"><h3 class="welcome-city__title">Сочи</h3><div class="welcome-city__count">285 экскурсий</div></div></a><a href="/experience/Kazan/"
+                               class="welcome-city"
+                               data-gtmtrigger="LinkClick"
+                               data-eventcategory="page_traveler_landing"
+                               data-eventaction="cities"
+                               data-eventlabel="https://experience.tripster.ru/experience/Kazan/"
+                               data-eventnoninteraction="1"
+                               data-city-id="197"
+                               data-city-name="Казань"
+                               data-exps-count="143"
+                            ><img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/photos/eda394dd-de77-4a71-80c0-c1cd422e9f8b.jpg" alt="" class="welcome-city__img"><div class="welcome-city__info"><h3 class="welcome-city__title">Казань</h3><div class="welcome-city__count">143 экскурсии</div></div></a><a href="/experience/Kislovodsk/"
+                               class="welcome-city"
+                               data-gtmtrigger="LinkClick"
+                               data-eventcategory="page_traveler_landing"
+                               data-eventaction="cities"
+                               data-eventlabel="https://experience.tripster.ru/experience/Kislovodsk/"
+                               data-eventnoninteraction="1"
+                               data-city-id="575"
+                               data-city-name="Кисловодск"
+                               data-exps-count="115"
+                            ><img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/thumbs2/142d1760-19b6-11e9-9be4-02b782d69cda.384x289.jpg" alt="" class="welcome-city__img"><div class="welcome-city__info"><h3 class="welcome-city__title">Кисловодск</h3><div class="welcome-city__count">115 экскурсий</div></div></a><a href="/experience/Anapa/"
+                               class="welcome-city"
+                               data-gtmtrigger="LinkClick"
+                               data-eventcategory="page_traveler_landing"
+                               data-eventaction="cities"
+                               data-eventlabel="https://experience.tripster.ru/experience/Anapa/"
+                               data-eventnoninteraction="1"
+                               data-city-id="601"
+                               data-city-name="Анапа"
+                               data-exps-count="36"
+                            ><img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/thumbs2/4e053746-51a2-11e9-932a-025c4c6e7a28.384x289.jpg" alt="" class="welcome-city__img"><div class="welcome-city__info"><h3 class="welcome-city__title">Анапа</h3><div class="welcome-city__count">36 экскурсий</div></div></a><a href="/experience/Tbilisi/"
+                               class="welcome-city"
+                               data-gtmtrigger="LinkClick"
+                               data-eventcategory="page_traveler_landing"
+                               data-eventaction="cities"
+                               data-eventlabel="https://experience.tripster.ru/experience/Tbilisi/"
+                               data-eventnoninteraction="1"
+                               data-city-id="60"
+                               data-city-name="Тбилиси"
+                               data-exps-count="276"
+                            ><img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/photos/e82d4032-68a7-4e2a-8644-35017cc40326.jpg" alt="" class="welcome-city__img"><div class="welcome-city__info"><h3 class="welcome-city__title">Тбилиси</h3><div class="welcome-city__count">276 экскурсий</div></div></a><a href="/experience/Istanbul/"
+                               class="welcome-city"
+                               data-gtmtrigger="LinkClick"
+                               data-eventcategory="page_traveler_landing"
+                               data-eventaction="cities"
+                               data-eventlabel="https://experience.tripster.ru/experience/Istanbul/"
+                               data-eventnoninteraction="1"
+                               data-city-id="18"
+                               data-city-name="Стамбул"
+                               data-exps-count="247"
+                            ><img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/photos/209947a9-8c4e-4b9f-b275-4d0e1fbbd901.jpg" alt="" class="welcome-city__img"><div class="welcome-city__info"><h3 class="welcome-city__title">Стамбул</h3><div class="welcome-city__count">247 экскурсий</div></div></a>
+                
+            </div>
+            <div class="welcome-cities-button">
+                <a href="/destinations/" class="new-button_green" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="cities" data-eventlabel="https://experience.tripster.ru/destinations/" data-eventnoninteraction="1">Посмотреть все города</a>
+                <div>631 город в 92 странах</div>
+            </div>
+        </div>
+    </div>
+    <div class="welcome-blocks">
+        <div class="wrap">
+            <div class="welcome-block">
+                <h3 class="welcome-block__title">Лучшая команда гидов</h3>
+                <div class="welcome-block__text">Вся магия в личном общении. Мы находим лучших гидов, для которых увлекать – это призвание!</div>
+            </div>
+            <div class="welcome-block">
+                <h3 class="welcome-block__title">Дружеские экскурсии</h3>
+                <div class="welcome-block__text">Проводим только качественные индивидуальные и групповые экскурсии на русском языке.</div>
+            </div>
+            <div class="welcome-block">
+                <h3 class="welcome-block__title">215 000 отзывов</h3>
+                <div class="welcome-block__text">Нас любят путешественники. В 2020 году на наших экскурсиях побывало 300 000 человек.</div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    
+        <div class="wrap">
+            <section id="todoideas" class="winter">
+                <h2 class="welcome-title">Чем заняться летом ☀️</h2>
+                <div class="winter__inner">
+                    <a
+                        href="https://experience.tripster.ru/experience/Sevastopol/9385-mys-fiolent/?from=todoideas"
+                        class="winter-card"
+                        data-idea-title="Увидеть крымские фьорды"
+                    >
+                        <img src="https://experience-ireland.s3.amazonaws.com/photos/td_cri06.jpg" alt="" class="winter-card__img">
+                        <span class="winter-card__text">Увидеть крымские фьорды</span>
+                    </a>
+                    <a
+                        href="https://experience.tripster.ru/experience/Vladivostok/all/?from=todoideas"
+                        class="winter-card"
+                        data-idea-title="Влюбиться во&nbsp;Владивосток"
+                    >
+                        <img src="https://experience-ireland.s3.amazonaws.com/photos/td_vla06.jpg" alt="" class="winter-card__img">
+                        <span class="winter-card__text">Влюбиться во&nbsp;Владивосток</span>
+                    </a>
+                    <a
+                        href="https://experience.tripster.ru/experience/Sochi/18010-activniy-otdih/?from=todoideas"
+                        class="winter-card"
+                        data-idea-title="Найти лучшие маршруты для треккинга в Сочи"
+                    >
+                        <img src="https://experience-ireland.s3.amazonaws.com/photos/td_so06.jpg" alt="" class="winter-card__img">
+                        <span class="winter-card__text">Найти лучшие маршруты для&nbsp;треккинга в&nbsp;Сочи</span>
+                    </a>
+                    <a
+                        href="https://experience.tripster.ru/experience/Dubrovnik/?from=todoideas"
+                        class="winter-card"
+                        data-idea-title="Исследовать улочки Дубровника"
+                    >
+                        <img src="https://experience-ireland.s3.amazonaws.com/photos/td_dub06.jpg" alt="" class="winter-card__img">
+                        <span class="winter-card__text">Исследовать улочки Дубровника</span>
+                    </a>
+                    <a
+                        href="https://experience.tripster.ru/destinations/regions/kareliya/?from=todoideas/"
+                        class="winter-card"
+                        data-idea-title="Устроить хвойный детокс в&nbsp;Карелии"
+                    >
+                        <img src="https://experience-ireland.s3.amazonaws.com/photos/td_kar.jpg" alt="" class="winter-card__img">
+                        <span class="winter-card__text">Устроить хвойный детокс в&nbsp;Карелии</span>
+                    </a>
+                    <a
+                        href="https://experience.tripster.ru/destinations/turkey/?from=todoideas"
+                        class="winter-card"
+                        data-idea-title="Поразиться многообразию Турции"
+                    >
+                        <img src="https://experience-ireland.s3.amazonaws.com/photos/td_tur.jpg" alt="" class="winter-card__img">
+                        <span class="winter-card__text">Поразиться многообразию Турции</span>
+                    </a>
+                    <a
+                        href="https://experience.tripster.ru/destinations/cyprus/?from=todoideas"
+                        class="winter-card"
+                        data-idea-title="Отдохнуть от&nbsp;суеты на&nbsp;Кипре"
+                    >
+                        <img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/photos/td_kip06.jpg" alt="" class="winter-card__img">
+                        <span class="winter-card__text">Отдохнуть от&nbsp;суеты на&nbsp;Кипре</span>
+                    </a>
+                    <a
+                        href="https://experience.tripster.ru/experience/Tbilisi/285-gastronomicheskie/?from=todoideas"
+                        class="winter-card"
+                        data-idea-title="Попробовать Грузию на&nbsp;вкус"
+                    >
+                        <img src="https://experience-ireland.s3.amazonaws.com/photos/td_ge06.jpg" alt="" class="winter-card__img">
+                        <span class="winter-card__text">Попробовать Грузию на&nbsp;вкус</span>
+                    </a>
+                    <a
+                        href="https://experience.tripster.ru/experience/Yerevan/9689-ozero-sevan/?from=todoideas"
+                        class="winter-card"
+                        data-idea-title="Отыскать маленькую Швейцарию в&nbsp;Армении"
+                    >
+                        <img src="https://experience-ireland.s3.amazonaws.com/photos/td_arm06.jpg" alt="" class="winter-card__img">
+                        <span class="winter-card__text">Отыскать маленькую Швейцарию в&nbsp;Армении</span>
+                    </a>
+                    <a
+                        href="https://experience.tripster.ru/destinations/regions/kavkazskie_mineralnye_vody/?from=todoideas"
+                        class="winter-card"
+                        data-idea-title="Надышаться горным воздухом в&nbsp;Кавминводах"
+                    >
+                        <img src="https://experience-ireland.s3.amazonaws.com/photos/td_kav.jpg" alt="" class="winter-card__img">
+                        <span class="winter-card__text">Надышаться горным воздухом в&nbsp;Кавминводах</span>
+                    </a>
+                    <a
+                        href="https://experience.tripster.ru/destinations/regions/zolotoe_kolco/?from=todoideas"
+                        class="winter-card"
+                        data-idea-title="Проникнуться русским духом в&nbsp;городах Золотого кольца"
+                    >
+                        <img src="https://experience-ireland.s3.amazonaws.com/photos/td_zol06.jpg" alt="" class="winter-card__img">
+                        <span class="winter-card__text">Проникнуться русским духом в&nbsp;городах Золотого кольца</span>
+                    </a>
+                    <a
+                        href="https://experience.tripster.ru/experience/Gelendzhik/all/?from=todoideas"
+                        class="winter-card"
+                        data-idea-title="Отправиться в гости в Геленджик"
+                    >
+                        <img src="https://experience-ireland.s3.amazonaws.com/photos/td_gel06.jpg" alt="" class="winter-card__img">
+                        <span class="winter-card__text">Отправиться в гости в Геленджик</span>
+                    </a>
+                    <a
+                        href="https://experience.tripster.ru/destinations/regions/dagestan/?from=todoideas"
+                        class="winter-card"
+                        data-idea-title="Открыть самое модное направление-2021"
+                    >
+                        <img src="https://experience-ireland.s3.amazonaws.com/photos/td_dagestan.jpg" alt="" class="winter-card__img">
+                        <span class="winter-card__text">Открыть самое модное направление-2021</span>
+                    </a>
+
+                    <a
+                        href="https://experience.tripster.ru/experience/Kazan/1874-neobyichnyie-marshrutyi/?from=todoideas"
+                        class="winter-card"
+                        data-idea-title="Узнать все о&nbsp;джазе, стрит-арте и&nbsp;андеграунде Казани"
+                    >
+                        <img src="https://experience-ireland.s3.amazonaws.com/photos/td_kaz06.jpg" alt="" class="winter-card__img">
+                        <span class="winter-card__text">Узнать все о&nbsp;джазе, стрит-арте и&nbsp;андеграунде Казани</span>
+                    </a>
+                    <a
+                        href="https://experience.tripster.ru/experience/Moscow/8557-parki_i_usadby/?from=todoideas"
+                        class="winter-card"
+                        data-idea-title="Погулять по&nbsp;столичным паркам и&nbsp;усадьбам"
+                    >
+                        <img src="https://experience-ireland.s3.amazonaws.com/photos/td_msk06.jpg" alt="" class="winter-card__img">
+                        <span class="winter-card__text">Погулять по&nbsp;столичным паркам и&nbsp;усадьбам</span>
+                    </a>
+                    <a
+                        href="https://experience.tripster.ru/experience/Saint_Petersburg/7342-exkursii-po-rekam-i-kanalam/?from=todoideas"
+                        class="winter-card"
+                        data-idea-title="Покататься на&nbsp;кораблике в&nbsp;Санкт-Петербурге"
+                    >
+                        <img src="https://experience-ireland.s3.amazonaws.com/photos/td_spb06.jpg" alt="" class="winter-card__img">
+                        <span class="winter-card__text">Покататься на&nbsp;кораблике в&nbsp;Санкт-Петербурге</span>
+                    </a>
+                </div>
+                <div class="winter-btn">
+                    <span class="btn btn_main">Смотреть все</span>
+                </div>
+
+            </section>
+        </div>
+    
+
+    <div class="wrap">
+        <h1 class="welcome-title">Как мы делаем экскурсии <i id="experiences" class="fake-anchor"></i></h1>
+        <div class="welcome-slider-wrap">
+            <div class="welcome-slider-top">
+                Мы находим лучших гидов и совместно придумываем экскурсии.
+                В результате вы встречаетесь с журналистами, историками,
+                архитекторами и другими интересными людьми,
+                которые умеют увлечь своими знаниями.​
+            </div>
+            <div class="welcome-slider-main">
+                
+                    
+                        
+
+
+    <div
+            class="welcome-slider-main__slide"
+            data-exp-id="24787"
+            data-guide-id="328786"
+            data-title="Балаклава, или крымская Венеция"
+            data-city-name="Севастополь"
+            data-exp-format="1"
+            data-exp-type="0"
+            data-exp-full-price="6000,00"
+            data-exp-instant-booking="False"
+            data-exp-discount-rate="0,00"
+            data-exp-duration="3,0"
+            data-exp-rating="5,0"
+    >
+        <div class="welcome-slider-slide-wrap">
+            
+            <a href="/experience/24787/" class="welcome-slider-img-wrap" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/24787/" data-eventnoninteraction="1">
+                <img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/cache/01/f6/01f6dfb81c147305b3ce45cd961c491d.jpg" alt="" class="welcome-slider-img">
+                <span class="new-button_green">Заказать</span>
+            </a>
+            <div class="welcome-slider-info">
+                <div class="welcome-slider__left">
+                    <div class="welcome-slider__photo">
+                        
+                            <a href="/guide/328786/" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/guide/328786/" data-eventnoninteraction="1"><img src="https://experience-ireland.s3.amazonaws.com/avatar/8a0c4e86-fadb-11e9-a278-02d82f4896e8.150x150.jpg" alt="" class="welcome-slider__photo-img"></a>
+                        
+                    </div>
+                    <div class="welcome-slider__exp">
+                        <a href="/experience/24787/" class="dark-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/24787/" data-eventnoninteraction="1">Балаклава, или крымская Венеция</a>
+                        <div class="welcome-slider__author">
+                            <a href="/guide/328786/" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/guide/328786/" data-eventnoninteraction="1">Нина</a>
+                            из
+                            <a href="/experience/Sevastopol/" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/Sevastopol/" data-eventnoninteraction="1">Севастополя</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="welcome-slider__right welcome-slider-info__right_full">
+                    
+                        <a href="/experience/24787/#reviews" class="welcome-slider__reviews" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/24787/#reviews" data-eventnoninteraction="1">
+                            
+                                13 отзывов
+                            
+                            
+                                <span class="rating"><i style="width:100%;" title="5 баллов по 13 отзывам"></i></span>
+                            
+                        </a href="">
+                    
+                    <div class="welcome-slider__price">
+                        
+                        <span>
+                            
+                            6000 руб.
+                        </span>
+                        <span class="welcome-slider__price-text">за экскурсию</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    
+                        
+
+
+    <div
+            class="welcome-slider-main__slide"
+            data-exp-id="27091"
+            data-guide-id="459070"
+            data-title="Экскурсия из Сочи в Абхазию в мини-группе"
+            data-city-name="Сочи"
+            data-exp-format="1"
+            data-exp-type="1"
+            data-exp-full-price="1950,00"
+            data-exp-instant-booking="False"
+            data-exp-discount-rate="0,00"
+            data-exp-duration="12,0"
+            data-exp-rating="4,72727272727"
+    >
+        <div class="welcome-slider-slide-wrap">
+            
+            <a href="/experience/27091/" class="welcome-slider-img-wrap" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/27091/" data-eventnoninteraction="1">
+                <img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/cache/35/f6/35f63020a4f270e7c72d54d528b0c98b.jpg" alt="" class="welcome-slider-img">
+                <span class="new-button_green">Заказать</span>
+            </a>
+            <div class="welcome-slider-info">
+                <div class="welcome-slider__left">
+                    <div class="welcome-slider__photo">
+                        
+                            <a href="/guide/459070/" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/guide/459070/" data-eventnoninteraction="1"><img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/avatar/8ed63972-fe7b-11eb-aaee-167ed2ea38b5.150x150.jpg" alt="" class="welcome-slider__photo-img"></a>
+                        
+                    </div>
+                    <div class="welcome-slider__exp">
+                        <a href="/experience/27091/" class="dark-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/27091/" data-eventnoninteraction="1">Экскурсия в Абхазию в мини-группе</a>
+                        <div class="welcome-slider__author">
+                            <a href="/guide/459070/" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/guide/459070/" data-eventnoninteraction="1">Анастасия</a>
+                            из
+                            <a href="/experience/Sochi/" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/Sochi/" data-eventnoninteraction="1">Сочи</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="welcome-slider__right welcome-slider-info__right_full">
+                    
+                        <a href="/experience/27091/#reviews" class="welcome-slider__reviews" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/27091/#reviews" data-eventnoninteraction="1">
+                            
+                                44 отзыва
+                            
+                            
+                                <span class="rating"><i style="width:95%;" title="4.73 балла по 44 отзывам"></i></span>
+                            
+                        </a href="">
+                    
+                    <div class="welcome-slider__price">
+                        
+                        <span>
+                            
+                            1950 руб.
+                        </span>
+                        <span class="welcome-slider__price-text">за человека</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    
+                        
+
+
+    <div
+            class="welcome-slider-main__slide"
+            data-exp-id="28392"
+            data-guide-id="516584"
+            data-title="Головокружительный Дагестан!"
+            data-city-name="Махачкала"
+            data-exp-format="1"
+            data-exp-type="0"
+            data-exp-full-price="6250,00"
+            data-exp-instant-booking="False"
+            data-exp-discount-rate="0,00"
+            data-exp-duration="8,0"
+            data-exp-rating="4,66666666667"
+    >
+        <div class="welcome-slider-slide-wrap">
+            
+            <a href="/experience/28392/" class="welcome-slider-img-wrap" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/28392/" data-eventnoninteraction="1">
+                <img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/cache/d0/f0/d0f0c39199843ad6ebacf7fbe9ac22be.jpg" alt="" class="welcome-slider-img">
+                <span class="new-button_green">Заказать</span>
+            </a>
+            <div class="welcome-slider-info">
+                <div class="welcome-slider__left">
+                    <div class="welcome-slider__photo">
+                        
+                            <a href="/guide/516584/" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/guide/516584/" data-eventnoninteraction="1"><img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/avatar/c751b75c-ba3a-11eb-a267-16df26d10d80.150x150.jpg" alt="" class="welcome-slider__photo-img"></a>
+                        
+                    </div>
+                    <div class="welcome-slider__exp">
+                        <a href="/experience/28392/" class="dark-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/28392/" data-eventnoninteraction="1">Головокружительный Дагестан!</a>
+                        <div class="welcome-slider__author">
+                            <a href="/guide/516584/" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/guide/516584/" data-eventnoninteraction="1">Гаджи</a>
+                            из
+                            <a href="/experience/Makhachkala/" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/Makhachkala/" data-eventnoninteraction="1">Махачкалы</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="welcome-slider__right welcome-slider-info__right_full">
+                    
+                        <a href="/experience/28392/#reviews" class="welcome-slider__reviews" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/28392/#reviews" data-eventnoninteraction="1">
+                            
+                                12 отзывов
+                            
+                            
+                                <span class="rating"><i style="width:93%;" title="4.67 балла по 12 отзывам"></i></span>
+                            
+                        </a href="">
+                    
+                    <div class="welcome-slider__price">
+                        
+                        <span>
+                            
+                            6250 руб.
+                        </span>
+                        <span class="welcome-slider__price-text">за экскурсию</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    
+                        
+
+
+    <div
+            class="welcome-slider-main__slide"
+            data-exp-id="27329"
+            data-guide-id="144685"
+            data-title="Бунтарский Петербург: город против системы"
+            data-city-name="Санкт-Петербург"
+            data-exp-format="1"
+            data-exp-type="1"
+            data-exp-full-price="700,00"
+            data-exp-instant-booking="False"
+            data-exp-discount-rate="0,00"
+            data-exp-duration="2,0"
+            data-exp-rating="4,86956521739"
+    >
+        <div class="welcome-slider-slide-wrap">
+            
+            <a href="/experience/27329/" class="welcome-slider-img-wrap" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/27329/" data-eventnoninteraction="1">
+                <img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/cache/a2/8f/a28f0657b2532f35257ae0958fd91001.jpg" alt="" class="welcome-slider-img">
+                <span class="new-button_green">Заказать</span>
+            </a>
+            <div class="welcome-slider-info">
+                <div class="welcome-slider__left">
+                    <div class="welcome-slider__photo">
+                        
+                            <a href="/guide/144685/" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/guide/144685/" data-eventnoninteraction="1"><img src="https://experience-ireland.s3.amazonaws.com/avatar/864c0156-9015-11e8-b5d2-0ac55974a77a.150x150.jpg" alt="" class="welcome-slider__photo-img"></a>
+                        
+                    </div>
+                    <div class="welcome-slider__exp">
+                        <a href="/experience/27329/" class="dark-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/27329/" data-eventnoninteraction="1">Бунтарский Петербург: город против системы</a>
+                        <div class="welcome-slider__author">
+                            <a href="/guide/144685/" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/guide/144685/" data-eventnoninteraction="1">Анастасия</a>
+                            из
+                            <a href="/experience/Saint_Petersburg/" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/Saint_Petersburg/" data-eventnoninteraction="1">Санкт-Петербурга</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="welcome-slider__right welcome-slider-info__right_full">
+                    
+                        <a href="/experience/27329/#reviews" class="welcome-slider__reviews" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/27329/#reviews" data-eventnoninteraction="1">
+                            
+                                46 отзывов
+                            
+                            
+                                <span class="rating"><i style="width:97%;" title="4.87 балла по 46 отзывам"></i></span>
+                            
+                        </a href="">
+                    
+                    <div class="welcome-slider__price">
+                        
+                        <span>
+                            
+                            700 руб.
+                        </span>
+                        <span class="welcome-slider__price-text">за человека</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    
+                        
+
+
+    <div
+            class="welcome-slider-main__slide"
+            data-exp-id="27351"
+            data-guide-id="398133"
+            data-title="Внутренняя жизнь Московской духовной академии"
+            data-city-name="Сергиев Посад"
+            data-exp-format="1"
+            data-exp-type="0"
+            data-exp-full-price="1275,00"
+            data-exp-instant-booking="False"
+            data-exp-discount-rate="0,15"
+            data-exp-duration="2,0"
+            data-exp-rating="5,0"
+    >
+        <div class="welcome-slider-slide-wrap">
+            
+                <div class="expcard-discount">
+                    скидка <span>15%</span>
+                    <div>еще 3 дня</div>
+                </div>
+            
+            <a href="/experience/27351/" class="welcome-slider-img-wrap" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/27351/" data-eventnoninteraction="1">
+                <img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/cache/74/b8/74b81268b4053efe69050aff7ff1f1b1.jpg" alt="" class="welcome-slider-img">
+                <span class="new-button_green">Заказать</span>
+            </a>
+            <div class="welcome-slider-info">
+                <div class="welcome-slider__left">
+                    <div class="welcome-slider__photo">
+                        
+                            <a href="/guide/398133/" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/guide/398133/" data-eventnoninteraction="1"><img src="https://d19d2iasf5vyac.cloudfront.net/avatar/4f3b9492-51a1-11eb-9ac3-5a98e603eef5.150x150.jpg" alt="" class="welcome-slider__photo-img"></a>
+                        
+                    </div>
+                    <div class="welcome-slider__exp">
+                        <a href="/experience/27351/" class="dark-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/27351/" data-eventnoninteraction="1">Внутренняя жизнь Московской духовной академии</a>
+                        <div class="welcome-slider__author">
+                            <a href="/guide/398133/" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/guide/398133/" data-eventnoninteraction="1">Алексей</a>
+                            из
+                            <a href="/experience/Sergiyev_Posad/" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/Sergiyev_Posad/" data-eventnoninteraction="1">Сергиева Посада</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="welcome-slider__right welcome-slider-info__right_full">
+                    
+                        <a href="/experience/27351/#reviews" class="welcome-slider__reviews" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/27351/#reviews" data-eventnoninteraction="1">
+                            
+                                5 отзывов
+                            
+                            
+                                <span class="rating"><i style="width:100%;" title="5 баллов по 5 отзывам"></i></span>
+                            
+                        </a href="">
+                    
+                    <div class="welcome-slider__price">
+                        
+                        <span>
+                            <span class="welcome-slider__price-text g-ib">от</span>
+                            1275 руб.
+                        </span>
+                        <span class="welcome-slider__price-text">за экскурсию</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    
+                        
+
+
+    <div
+            class="welcome-slider-main__slide"
+            data-exp-id="20648"
+            data-guide-id="236380"
+            data-title="За лучшими винами Краснодарского края"
+            data-city-name="Геленджик"
+            data-exp-format="1"
+            data-exp-type="0"
+            data-exp-full-price="7800,00"
+            data-exp-instant-booking="False"
+            data-exp-discount-rate="0,00"
+            data-exp-duration="5,0"
+            data-exp-rating="5,0"
+    >
+        <div class="welcome-slider-slide-wrap">
+            
+            <a href="/experience/20648/" class="welcome-slider-img-wrap" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/20648/" data-eventnoninteraction="1">
+                <img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/cache/64/46/64464c2c30a5625e81fee07ac28dee5d.jpg" alt="" class="welcome-slider-img">
+                <span class="new-button_green">Заказать</span>
+            </a>
+            <div class="welcome-slider-info">
+                <div class="welcome-slider__left">
+                    <div class="welcome-slider__photo">
+                        
+                            <a href="/guide/236380/" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/guide/236380/" data-eventnoninteraction="1"><img src="https://experience-ireland.s3.amazonaws.com/avatar/a69d66fc-6b3e-11e9-935d-025c4c6e7a28.150x150.jpg" alt="" class="welcome-slider__photo-img"></a>
+                        
+                    </div>
+                    <div class="welcome-slider__exp">
+                        <a href="/experience/20648/" class="dark-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/20648/" data-eventnoninteraction="1">За лучшими винами Краснодарского края</a>
+                        <div class="welcome-slider__author">
+                            <a href="/guide/236380/" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/guide/236380/" data-eventnoninteraction="1">Светлана</a>
+                            из
+                            <a href="/experience/Gelendzhik/" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/Gelendzhik/" data-eventnoninteraction="1">Геленджика</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="welcome-slider__right welcome-slider-info__right_full">
+                    
+                        <a href="/experience/20648/#reviews" class="welcome-slider__reviews" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/20648/#reviews" data-eventnoninteraction="1">
+                            
+                                2 отзыва
+                            
+                            
+                                <span class="rating"><i style="width:100%;" title="5 баллов по 2 отзывам"></i></span>
+                            
+                        </a href="">
+                    
+                    <div class="welcome-slider__price">
+                        
+                        <span>
+                            
+                            7800 руб.
+                        </span>
+                        <span class="welcome-slider__price-text">за экскурсию</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    
+                        
+
+
+    <div
+            class="welcome-slider-main__slide"
+            data-exp-id="25221"
+            data-guide-id="422201"
+            data-title="Урочище Джилы-су: магия Северного Приэльбрусья"
+            data-city-name="Кисловодск"
+            data-exp-format="1"
+            data-exp-type="0"
+            data-exp-full-price="10000,00"
+            data-exp-instant-booking="False"
+            data-exp-discount-rate="0,00"
+            data-exp-duration="6,0"
+            data-exp-rating="5,0"
+    >
+        <div class="welcome-slider-slide-wrap">
+            
+            <a href="/experience/25221/" class="welcome-slider-img-wrap" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/25221/" data-eventnoninteraction="1">
+                <img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/cache/cc/dd/ccdd619cb83950506375939232af616f.jpg" alt="" class="welcome-slider-img">
+                <span class="new-button_green">Заказать</span>
+            </a>
+            <div class="welcome-slider-info">
+                <div class="welcome-slider__left">
+                    <div class="welcome-slider__photo">
+                        
+                            <a href="/guide/422201/" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/guide/422201/" data-eventnoninteraction="1"><img src="https://experience-ireland.s3.amazonaws.com/avatar/2fae583a-e84c-11ea-b1d5-025c4c6e7a28.150x150.jpg" alt="" class="welcome-slider__photo-img"></a>
+                        
+                    </div>
+                    <div class="welcome-slider__exp">
+                        <a href="/experience/25221/" class="dark-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/25221/" data-eventnoninteraction="1">Урочище Джилы-су: магия Северного Приэльбрусья</a>
+                        <div class="welcome-slider__author">
+                            <a href="/guide/422201/" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/guide/422201/" data-eventnoninteraction="1">Денис</a>
+                            из
+                            <a href="/experience/Kislovodsk/" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/Kislovodsk/" data-eventnoninteraction="1">Кисловодска</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="welcome-slider__right welcome-slider-info__right_full">
+                    
+                        <a href="/experience/25221/#reviews" class="welcome-slider__reviews" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/25221/#reviews" data-eventnoninteraction="1">
+                            
+                                6 отзывов
+                            
+                            
+                                <span class="rating"><i style="width:100%;" title="5 баллов по 6 отзывам"></i></span>
+                            
+                        </a href="">
+                    
+                    <div class="welcome-slider__price">
+                        
+                        <span>
+                            
+                            10000 руб.
+                        </span>
+                        <span class="welcome-slider__price-text">за экскурсию</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    
+                        
+
+
+    <div
+            class="welcome-slider-main__slide"
+            data-exp-id="28096"
+            data-guide-id="502712"
+            data-title="Древняя и загадочная Северная Осетия"
+            data-city-name="Владикавказ"
+            data-exp-format="1"
+            data-exp-type="0"
+            data-exp-full-price="7800,00"
+            data-exp-instant-booking="False"
+            data-exp-discount-rate="0,00"
+            data-exp-duration="9,0"
+            data-exp-rating="4,9"
+    >
+        <div class="welcome-slider-slide-wrap">
+            
+            <a href="/experience/28096/" class="welcome-slider-img-wrap" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/28096/" data-eventnoninteraction="1">
+                <img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/cache/be/94/be9456aef5d63f604463ef41d96649eb.jpg" alt="" class="welcome-slider-img">
+                <span class="new-button_green">Заказать</span>
+            </a>
+            <div class="welcome-slider-info">
+                <div class="welcome-slider__left">
+                    <div class="welcome-slider__photo">
+                        
+                            <a href="/guide/502712/" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/guide/502712/" data-eventnoninteraction="1"><img src="https://554a875a-71dc-4f5f-b6bf-ae8967f137d5.selcdn.net/avatar/644f7760-a127-11eb-aa07-929321968500.150x150.jpg" alt="" class="welcome-slider__photo-img"></a>
+                        
+                    </div>
+                    <div class="welcome-slider__exp">
+                        <a href="/experience/28096/" class="dark-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/28096/" data-eventnoninteraction="1">Древняя и загадочная Северная Осетия</a>
+                        <div class="welcome-slider__author">
+                            <a href="/guide/502712/" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/guide/502712/" data-eventnoninteraction="1">Николай</a>
+                            из
+                            <a href="/experience/Vladikavkaz/" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/Vladikavkaz/" data-eventnoninteraction="1">Владикавказа</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="welcome-slider__right welcome-slider-info__right_full">
+                    
+                        <a href="/experience/28096/#reviews" class="welcome-slider__reviews" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="https://experience.tripster.ru/experience/28096/#reviews" data-eventnoninteraction="1">
+                            
+                                10 отзывов
+                            
+                            
+                                <span class="rating"><i style="width:98%;" title="4.9 балла по 10 отзывам"></i></span>
+                            
+                        </a href="">
+                    
+                    <div class="welcome-slider__price">
+                        
+                        <span>
+                            
+                            7800 руб.
+                        </span>
+                        <span class="welcome-slider__price-text">за экскурсию</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="welcome-blocks welcome-blocks_bg">
+        <div class="wrap">
+            <div class="welcome-block">
+                <h3 class="welcome-block__title">Бронирование онлайн</h3>
+                <div class="welcome-block__text">Выберите экскурсию на сайте и забронируйте на удобную дату</div>
+            </div>
+            <div class="welcome-block">
+                <h3 class="welcome-block__title">Можно задать вопросы гиду</h3>
+                <div class="welcome-block__text">Обсудите с гидом все подробности и задайте любые вопросы до оплаты</div>
+            </div>
+            <div class="welcome-block">
+                <h3 class="welcome-block__title">Не нужно платить все сразу</h3>
+                <div class="welcome-block__text">Оплатите 20% стоимости картой, а оставшиеся деньги гиду на месте</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <div class="welcome-press">
+            <a href="http://www.rbc.ru/magazine/2017/05/58f5f15f9a7947773c8a8346" class="welcome-press-block" target="_blank">
+                <img src="/static/i/logo-rbc.png" alt="" class="welcome-press-block__img" data-gtmtrigger="ElementClick" data-eventcategory="page_traveler_landing" data-eventaction="media-logo" data-eventlabel="rbk" data-eventnoninteraction="1">
+            </a>
+            <a href="http://www.forbes.ru/svoi-biznes/istorii-uspekha/274737-nestandartnyi-marshrut-kak-servis-tripster-zarabatyvaet-na-gidakh" class="welcome-press-block" target="_blank">
+                <img src="/static/i/forbes-logo.jpg" alt="" class="welcome-press-block__img" data-gtmtrigger="ElementClick" data-eventcategory="page_traveler_landing" data-eventaction="media-logo" data-eventlabel="forbes" data-eventnoninteraction="1">
+            </a>
+            <a href="http://www.echo.msk.ru/programs/echonet/1107096-echo/" class="welcome-press-block" target="_blank">
+                <img src="/static/i/echo-msk.png" alt="" class="welcome-press-block__img" data-gtmtrigger="ElementClick" data-eventcategory="page_traveler_landing" data-eventaction="media-logo" data-eventlabel="echo-moscow" data-eventnoninteraction="1">
+            </a>
+            <a href="http://radiomayak.ru/person/show/id/5047" class="welcome-press-block" target="_blank">
+                <img src="/static/i/mayak-logo.jpg" alt="" class="welcome-press-block__img" data-gtmtrigger="ElementClick" data-eventcategory="page_traveler_landing" data-eventaction="media-logo" data-eventlabel="mayak" data-eventnoninteraction="1">
+            </a>
+        </div>
+    </div>
+
+    <div class="welcome-reviews" itemscope itemtype="http://schema.org/Product">
+        <meta itemprop="name" content="Необычные экскурсии от местных жителей"/>
+        <meta itemprop="description" content="Необычные экскурсии в 631 городе городах мира. Гиды — историки, журналисты, архитекторы и другие люди, которые умеют увлечь своими знаниями. Все экскурсии на русском, индивидуальные — для вас и вашей компании. На сайте больше 215000 отзывов!"/>
+        <span itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+            <meta itemprop="lowprice" content="200">
+            <meta itemprop="highprice" content="114000">
+            <meta itemprop="pricecurrency" content="RUB">
+        </span>
+        <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+            <meta itemprop="ratingValue" content="4.9" />
+            <meta itemprop="reviewCount" content="215399" />
+        </span>
+        <h1 class="welcome-title">Отзывы путешественников</h1>
+        <div class="wrap">
+            <div class="welcome-reviews-slider-wrap">
+                <div class="welcome-reviews-slider">
+                    
+                        <div>
+                            <div class="review">
+                                <div class="g-ac">
+                                    <span title="" class="rating-max g-ib"><i style="width:100%;"></i></span>
+                                </div>
+                                <div class="review__head">
+                                    <span class="review__name">Владимир</span>
+                                    про <a href="/experience/18718/" class="blue-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="reviews" data-eventlabel="https://experience.tripster.ru/experience/18718/" data-eventnoninteraction="1">Пешком на Ай-Петри — восхождение на 1234 метра!</a> <span style="white-space: nowrap;">7 мая 2021</span>
+                                </div>
+                                <div class="review__text">
+                                    
+                                        Прекрасный поход. Отдельная благодарность гидам, нас вели две Юлии. Все позитивно, прекрасный сервис, ммм , а эта гречка по авторскому рецепту просто космос)). Ну и конечно же прекрасные виды, одно из самых ярких впечатлений в отпуске. Вообщем крайне рекомендую)))
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div>
+                            <div class="review">
+                                <div class="g-ac">
+                                    <span title="" class="rating-max g-ib"><i style="width:100%;"></i></span>
+                                </div>
+                                <div class="review__head">
+                                    <span class="review__name">Андрей</span>
+                                    про <a href="/experience/22232/" class="blue-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="reviews" data-eventlabel="https://experience.tripster.ru/experience/22232/" data-eventnoninteraction="1">Старейшина на карте Крыма: Инкерман</a> <span style="white-space: nowrap;">9 марта 2021</span>
+                                </div>
+                                <div class="review__text">
+                                    
+                                        Качество экскурсии, которое мы всегда ждём от Трипстера: компетентно, ярко, не банально. Получили удовольствие  от  прогулки с Екатериной, желаем себе и другим туристам новых, незабываемых встреч с ней! Екатерина, спасибо огромное, надеемся увидеться снова!
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div>
+                            <div class="review">
+                                <div class="g-ac">
+                                    <span title="" class="rating-max g-ib"><i style="width:100%;"></i></span>
+                                </div>
+                                <div class="review__head">
+                                    <span class="review__name">Александра</span>
+                                    про <a href="/experience/15662/" class="blue-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="reviews" data-eventlabel="https://experience.tripster.ru/experience/15662/" data-eventnoninteraction="1">Квест: «Влюбись в Петербург, если осмелишься»</a> <span style="white-space: nowrap;">9 июня 2021</span>
+                                </div>
+                                <div class="review__text">
+                                    
+                                        То, что до этого я называла квестами, оказалось ошибкой. Вот ЭТО самый настоящий квест, в настоящем городе, на настоящих улицах, дворах, парадных, с интересными и продуманными загадками! Это было потрясающе!))) Самый лучший квест моей жизни! Огромное спасибо Руслану и всем людям, которые участвовали в создании этого прекрасного приключения!) После такого просто невозможно не влюбиться в этот невероятный город и его жителей!)
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div>
+                            <div class="review">
+                                <div class="g-ac">
+                                    <span title="" class="rating-max g-ib"><i style="width:100%;"></i></span>
+                                </div>
+                                <div class="review__head">
+                                    <span class="review__name">Наталия</span>
+                                    про <a href="/experience/25675/" class="blue-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="reviews" data-eventlabel="https://experience.tripster.ru/experience/25675/" data-eventnoninteraction="1">Дыхание Севера: групповая экскурсия в Териберку</a> <span style="white-space: nowrap;">20 апреля 2021</span>
+                                </div>
+                                <div class="review__text">
+                                    
+                                        Экскурсия превзошла мои ожидания! Василий - прекрасный гид, водитель, интересный позитивный  человек, который сделает все возможное, чтобы вы увидели красоты Кольского полуострова по максимуму. Северный ледовитый океан, катание на снегоходах до водопада, Териберка - я в восторге от всего насыщенного дня! Буду с радостью вспоминать экскурсию!
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div>
+                            <div class="review">
+                                <div class="g-ac">
+                                    <span title="" class="rating-max g-ib"><i style="width:100%;"></i></span>
+                                </div>
+                                <div class="review__head">
+                                    <span class="review__name">Ксения</span>
+                                    про <a href="/experience/25764/" class="blue-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="reviews" data-eventlabel="https://experience.tripster.ru/experience/25764/" data-eventnoninteraction="1">Что посмотреть в Стамбуле за 5 часов!</a> <span style="white-space: nowrap;">11 июня 2021</span>
+                                </div>
+                                <div class="review__text">
+                                    
+                                        Благодаря Махмуду познакомились и даже смогли начать понимать этот  потрясающий и ни на что не похожий город! Мой 10 летний сын категорически не хотел идти на экскурсию, но после прогулки с Махмудом сказал, что это было лучшее, что произошло с нами в Стамбуле :) Все просто, доступно,  интересно и без напряга! Однозначно рекомендую!!!
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <div class="welcome-howitworks">
+            <div class="welcome-howitworks-block">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="user-plus" viewBox="0 0 640 512">
+                        <path d="M624 208h-64v-64c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v64h-64c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h64v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64h64c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm-400 48c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
+                    </svg>
+                </div>
+                <h3 class="welcome-howitworks__title">Как стать гидом Трипстера</h3>
+                <div class="welcome-howitworks__text"><b><a href="https://experience.tripster.ru/locals/" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="contacts" data-eventlabel="https://experience.tripster.ru/locals/" data-eventnoninteraction="1">Отправьте</a></b> заявку на экскурсию</div>
+            </div>
+            <div class="welcome-howitworks-block">
+                <div class="icon icon_handshake">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="handshake" viewBox="0 0 640 512">
+                        <path d="M519.2 127.9l-47.6-47.6A56.252 56.252 0 0 0 432 64H205.2c-14.8 0-29.1 5.9-39.6 16.3L118 127.9H0v255.7h64c17.6 0 31.8-14.2 31.9-31.7h9.1l84.6 76.4c30.9 25.1 73.8 25.7 105.6 3.8 12.5 10.8 26 15.9 41.1 15.9 18.2 0 35.3-7.4 48.8-24 22.1 8.7 48.2 2.6 64-16.8l26.2-32.3c5.6-6.9 9.1-14.8 10.9-23h57.9c.1 17.5 14.4 31.7 31.9 31.7h64V127.9H519.2zM48 351.6c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16c0 8.9-7.2 16-16 16zm390-6.9l-26.1 32.2c-2.8 3.4-7.8 4-11.3 1.2l-23.9-19.4-30 36.5c-6 7.3-15 4.8-18 2.4l-36.8-31.5-15.6 19.2c-13.9 17.1-39.2 19.7-55.3 6.6l-97.3-88H96V175.8h41.9l61.7-61.6c2-.8 3.7-1.5 5.7-2.3H262l-38.7 35.5c-29.4 26.9-31.1 72.3-4.4 101.3 14.8 16.2 61.2 41.2 101.5 4.4l8.2-7.5 108.2 87.8c3.4 2.8 3.9 7.9 1.2 11.3zm106-40.8h-69.2c-2.3-2.8-4.9-5.4-7.7-7.7l-102.7-83.4 12.5-11.4c6.5-6 7-16.1 1-22.6L367 167.1c-6-6.5-16.1-6.9-22.6-1l-55.2 50.6c-9.5 8.7-25.7 9.4-34.6 0-9.3-9.9-8.5-25.1 1.2-33.9l65.6-60.1c7.4-6.8 17-10.5 27-10.5l83.7-.2c2.1 0 4.1.8 5.5 2.3l61.7 61.6H544v128zm48 47.7c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16c0 8.9-7.2 16-16 16z"></path>
+                    </svg>
+                </div>
+                <h3 class="welcome-howitworks__title">Партнерам</h3>
+                <div class="welcome-howitworks__text"><b><a href="https://experience.tripster.ru/about/partners/" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="contacts" data-eventlabel="https://experience.tripster.ru/about/partners/" data-eventnoninteraction="1">Зарегистрируйтесь</a></b> в нашей партнерской программе</div>
+            </div>
+            <div class="welcome-howitworks-block">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="question" viewBox="0 0 512 512">
+                        <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"></path>
+                    </svg>
+                </div>
+                <h3 class="welcome-howitworks__title">Служба поддержки</h3>
+                <div class="welcome-howitworks__text">
+                    Пишите на <b><a href="mailto:support@tripster.ru" class="azure-link" data-gtmtrigger="LinkClick" data-eventcategory="page_traveler_landing" data-eventaction="contacts" data-eventlabel="mailto:support@tripster.ru" data-eventnoninteraction="1">support@tripster.ru</a></b>
+                    или звоните <b><a href="tel:+74999170201" class="azure-link" style="white-space: nowrap; ">+7&nbsp;(499)&nbsp;917‑02‑01</a></b>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+        </div>
+    
+
+    
+        
+
+
+
+<script type="text/javascript" src="/static_frontend/bundles/js/site_footer.5adfe81c.js" ></script>
+<link type="text/css" href="/static_frontend/bundles/css/site_footer.3520bbc7.css" rel="stylesheet" />
+
+<site-footer>
+    
+<div class="footer">
+    <div class="wrap">
+        <div class="f-top">
+            <div class="f-top__left">
+                <div class="f-top__left-meta"><a href="/" class="f-top__logo"><img src="/static/i/svg/logo.svg" alt="Авторские экскурсии на Tripster.ru" width="136" height="40" loading="lazy"></a><span class="f-top__text">Необычные экскурсии от местных<br >жителей в более 600 городах мира</span></div>
+                <div class="f-top__left-contacts experiment">
+                    <div class="f__chat">Написать в чат<nav class="f__chat-list"><a href="https://t.me/tripsterrubot" rel="noreferrer" target="_blank" data-gtmtrigger="LinkClick" data-eventcategory="site_contacts" data-eventaction="footer" data-eventlabel="tg" data-eventnoninteraction="1" class="f__chat-item">Telegram</a><a href="https://vk.com/im?sel=-51519887" rel="noreferrer" target="_blank" data-gtmtrigger="LinkClick" data-eventcategory="site_contacts" data-eventaction="footer" data-eventlabel="vk" data-eventnoninteraction="1" class="f__chat-item">ВКонтакте</a><a href="https://m.me/11158630552106" rel="noreferrer" target="_blank" data-gtmtrigger="LinkClick" data-eventcategory="site_contacts" data-eventaction="footer" data-eventlabel="fb" data-eventnoninteraction="1" class="f__chat-item">Фейсбук</a></nav>
+                    </div>
+                    <nav class="f-contacts"><a href="mailto:support@tripster.ru" target="_blank" data-gtmtrigger="LinkClick" data-eventcategory="site_contacts" data-eventaction="footer" data-eventlabel="email" data-eventnoninteraction="1" class="f-contacts__link">support@tripster.ru</a><a href="tel:+74951463966" data-gtmtrigger="LinkClick" data-eventcategory="site_contacts" data-eventaction="footer" data-eventlabel="tel" data-eventnoninteraction="1" class="f-contacts__link">+7 (499) 917‑02‑01</a></nav>
+                </div>
+            </div>
+            <div class="f-menus">
+                <div class="f-menu__col">
+                    <h4 class="f__title">Путешественникам</h4>
+                    <nav class="f-menu"><a href="/about/terms/" class="f-menu__item">Условия использования</a><a href="/about/secure_payments/" class="f-menu__item">Безопасность платежей</a><a href="/about/privacy_policy/" class="f-menu__item">Политика конфиденциальности</a><a href="/about/cancellation_policy/" class="f-menu__item">Политика возврата</a></nav>
+                </div>
+                <div class="f-menu__col">
+                    <h4 class="f__title">Гидам</h4>
+                    <nav class="f-menu"><a href="/locals/" class="f-menu__item">Стать гидом Трипстера</a><a href="/help_center/guides/" class="f-menu__item">Помощь для гидов</a><a href="/help_center/guides/rules/" class="f-menu__item">Правила работы</a></nav>
+                </div>
+                <div class="f-menu__col">
+                    <h4 class="f__title">Партнерам</h4>
+                    <nav class="f-menu"><a href="/partners/" class="f-menu__item">Партнёрская программа</a><a href="/affiliate/" class="f-menu__item">Партнёрский кабинет</a><a href="https://tripster.atlassian.net/wiki/spaces/affiliates/overview" class="f-menu__item">Документация</a></nav>
+                </div>
+            </div>
+        </div>
+        <div class="f-subs">
+            <div class="f-subs__inner">
+                <div class="f-subs__title">Еженедельные скидки для наших подписчиков</div>
+                <div id="mc_embed_signup">
+                    <form id="mc-embedded-subscribe-form" action="https://tripster.us6.list-manage.com/subscribe/post?u=fbe4ec4b472fa63d953e0840f&amp;id=92f77cbf54" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate="novalidate" class="validate">
+                        <div id="mc_embed_signup_scroll"><input id="mce-EMAIL" type="email" value="" name="EMAIL" placeholder="Email адрес" required="required" class="email">
+                            <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_fbe4ec4b472fa63d953e0840f_92f77cbf54" tabindex="-1" value=""></div>
+                            <div class="clear"><input id="mc-embedded-subscribe" type="submit" value="Подписаться" name="subscribe" data-gtmtrigger="ElementClick" data-eventcategory="subscription" data-eventaction="subscribed" data-eventlabel="footer" class="btn btn_main"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="f-subs__text">Рассылка выходит по средам,
+                    <a href="https://mailchi.mp/tripster/0b5q0hoczp-849683" rel="noreferrer" target="_blank" data-gtmtrigger="ElementClick" data-eventcategory="subscription" data-eventaction="example-clicked" data-eventlabel="footer" data-eventnoninteraction="1">посмотрите пример</a>.
+                    <span>Можно отписаться в&nbsp;любой момент.</span>
+                </div>
+            </div>
+            <div class="f-subs__app"><span class="f-iphone__text">Скачайте приложение&nbsp;Tripster для&nbsp;путешественников</span><a href="https://apps.apple.com/ru/app/tripster-необычные-экскурсии/id1479200934" rel="noreferrer" target="_blank" class="f-iphone__btn"><img src="/static/i/svg/f-ios-app.svg" width="120" height="40" alt="Скачайте приложение&amp;nbsp;Tripster для&amp;nbsp;путешественников" loading="lazy"></a></div>
+        </div>
+    </div>
+    <div class="f-bottom">
+        <div class="wrap">
+            <div class="f-bottom__inner">
+                <div class="f-bottom__left">© 2021, Tripster<a href="/about/">О проекте</a><a href="https://hh.ru/employer/1096484" rel="nofollow" target="_blank">Вакансии</a></div>
+                <nav class="f-socials__item"><a href="https://vk.com/tripster_ru" rel="noreferrer" target="_blank" class="f-socials__link"><svg role="img">
+                            <use xlink:href="#vk"></use>
+                        </svg></a><a href="https://instagram.com/tripster_ru" rel="noreferrer" target="_blank" class="f-socials__link"><svg role="img">
+                            <use xlink:href="#insta"></use>
+                        </svg></a><a href="https://www.facebook.com/Tripster.ru" rel="noreferrer" target="_blank" class="f-socials__link"><svg role="img">
+                            <use xlink:href="#fb"></use>
+                        </svg></a><a href="https://t.me/tripsterofficial" rel="noreferrer" target="_blank" class="f-socials__link"><svg role="img">
+                            <use xlink:href="#telegram"></use>
+                        </svg></a></nav>
+                <div class="f-iphone">
+                    <picture class="f-iphone__iphone">
+                        <source type="image/webp" alt="Авторские экскурсии на Tripster.ru" srcset="/static/i/f-iphone.webp" loading="lazy">
+                        <source type="image/png" alt="Авторские экскурсии на Tripster.ru" srcset="/static/i/f-iphone.png" loading="lazy"><img width="185" height="296" alt="Авторские экскурсии на Tripster.ru" src="/static/i/f-iphone.png" loading="lazy">
+                    </picture><span class="f-iphone__text">Скачайте приложение&nbsp;Tripster для&nbsp;путешественников</span><a href="https://apps.apple.com/ru/app/tripster-необычные-экскурсии/id1479200934" rel="noreferrer" target="_blank" class="f-iphone__btn"><img src="/static/i/svg/f-ios-app.svg" width="120" height="40" alt="Скачайте приложение&amp;nbsp;Tripster для&amp;nbsp;путешественников" loading="lazy"></a>
+                </div>
+                <div class="f-pays"><img src="/static/i/svg/pay-logos-f.svg" width="142" height="19" alt="Платежные системы" loading="lazy"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.footer {
+	font-family: Museo Sans, -apple-system, BlinkMacSystemFont, Arial, Helvetica Neue, sans-serif;
+	padding: 24px 0 0;
+	color: #2b3a49;
+	background: #efefef
+}
+.footer a:hover {
+	opacity: .88
+}
+@media only screen and (max-width: 1024px) {
+	.footer {
+		position: relative;
+		padding: 32px 0 62px;
+		z-index: 30
+	}
+}
+@media only screen and (max-width: 767px) {
+	.footer {
+		padding: 24px 0 54px
+	}
+}
+.f-top {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex
+}
+@media only screen and (max-width: 1024px) {
+	.f-top {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column
+	}
+}
+.f-top__left {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-flex: 3;
+	-webkit-flex: 3;
+	-ms-flex: 3;
+	flex: 3;
+	margin: 0 12px 0 0;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column
+}
+@media only screen and (max-width: 1024px) {
+	.f-top__left {
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: row;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-webkit-box-flex: 1;
+		-webkit-flex: auto;
+		-ms-flex: auto;
+		flex: auto;
+		margin: 0
+	}
+}
+@media only screen and (max-width: 767px) {
+	.f-top__left {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center
+	}
+}
+.f-top__left-meta {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column
+}
+@media only screen and (max-width: 1024px) {
+	.f-top__left-meta {
+		-webkit-box-flex: 6;
+		-webkit-flex: 6;
+		-ms-flex: 6;
+		flex: 6
+	}
+}
+@media only screen and (max-width: 767px) {
+	.f-top__left-meta {
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		margin: 0 0 22px
+	}
+}
+.f-top__logo {
+	width: 136px
+}
+.f-top__logo img {
+	display: block;
+	width: 100%;
+	height: auto
+}
+.f-top__text {
+	font-size: 14px;
+	line-height: 24px;
+	margin: 7px 0 0
+}
+@media only screen and (max-width: 1024px) {
+	.f-top__text {
+		font-size: 16px;
+		margin: 15px 0 0
+	}
+}
+@media only screen and (max-width: 767px) {
+	.f-top__text {
+		text-align: center;
+		margin: 8px 0 0
+	}
+}
+.f-top__left-contacts {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	margin: 12px 0 0
+}
+@media only screen and (max-width: 1024px) {
+	.f-top__left-contacts {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-flex: 3;
+		-webkit-flex: 3;
+		-ms-flex: 3;
+		flex: 3;
+		margin: 4px 0 0 48px
+	}
+}
+@media only screen and (max-width: 767px) {
+	.f-top__left-contacts {
+		width: 100%;
+		margin: -11px 0 0
+	}
+}
+.f-contacts {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	margin: 14px 0 0
+}
+@media only screen and (max-width: 767px) {
+	.f-contacts {
+		width: 100%;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center
+	}
+}
+.f-contacts__link {
+	line-height: 24px;
+	text-decoration: none;
+	color: #2e78c1
+}
+.f-contacts__link[href^=tel] {
+	margin: 12px 0 0;
+	font-size: 16px;
+	color: #2b3a49
+}
+@media only screen and (max-width: 767px) {
+	.f-contacts__link[href^=tel] {
+		margin: 6px 0 0
+	}
+}
+.f__chat {
+	position: relative;
+	margin: 4px 0;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 700;
+	color: #2b3a49;
+	z-index: 3
+}
+@media only screen and (max-width: 767px) {
+	.f__chat {
+		width: 100%;
+		text-align: center
+	}
+}
+.f__chat-list {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	font-weight: 400;
+	font-size: 14px;
+	margin: 8px 0 0;
+	border-radius: 4px;
+	overflow: hidden
+}
+@media only screen and (max-width: 767px) {
+	.f__chat-list {
+		width: 100%
+	}
+}
+.f__chat-item {
+	padding: 7px 8px;
+	color: #2e78c1;
+	text-decoration: none;
+	border: 0;
+	border-left: 1px solid #efefef;
+	background: #fff
+}
+.f__chat-item:first-child {
+	border: 0
+}
+.f__chat-item:first-child:before {
+	content: "";
+	position: absolute;
+	left: 15px;
+	bottom: -10px;
+	width: 0;
+	height: 0;
+	border-top: 10px solid #fff;
+	border-right: 10px solid rgba(0, 0, 0, 0);
+	z-index: 2
+}
+.f__chat-item:hover {
+	background: #efefef
+}
+.f__chat-item:hover:before {
+	border-top-color: #efefef
+}
+@media only screen and (max-width: 767px) {
+	.f__chat-item {
+		-webkit-box-flex: 1;
+		-webkit-flex: 1;
+		-ms-flex: 1;
+		flex: 1;
+		text-align: center;
+		padding: 7px 0
+	}
+}
+.f__title {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 24px;
+	color: #2b3a49
+}
+.f__title svg {
+	display: none;
+	width: 14px;
+	height: 14px;
+	fill: #2b3a49;
+	-webkit-transition: all .2s;
+	-o-transition: all .2s;
+	transition: all .2s
+}
+.f__title.active svg {
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg)
+}
+@media only screen and (max-width: 767px) {
+	.f__title svg {
+		display: block
+	}
+}
+.f-menus {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-flex: 9;
+	-webkit-flex: 9;
+	-ms-flex: 9;
+	flex: 9;
+	margin: 6px 0 0
+}
+@media only screen and (max-width: 1024px) {
+	.f-menus {
+		-webkit-box-flex: 1;
+		-webkit-flex: auto;
+		-ms-flex: auto;
+		flex: auto;
+		margin: 42px 0 0
+	}
+}
+@media only screen and (max-width: 767px) {
+	.f-menus {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		margin: 27px 0 0
+	}
+}
+.f-menus__wrap {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex
+}
+.f-menu__col {
+	-webkit-box-flex: 4;
+	-webkit-flex: 4;
+	-ms-flex: 4;
+	flex: 4;
+	margin: 0 0 0 24px
+}
+.f-menu__col:first-child {
+	margin: 0
+}
+@media only screen and (max-width: 767px) {
+	.f-menu__col {
+		margin: 20px 0 0
+	}
+}
+.f-menu {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	margin: 17px 0 0
+}
+@media only screen and (max-width: 767px) {
+	.f-menu {
+		display: none
+	}
+	.f-menu.active {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex
+	}
+}
+.f-menu__item {
+	color: #2e78c1;
+	text-decoration: none;
+	line-height: 24px;
+	margin: 8px 0 0
+}
+.f-menu__item:first-child {
+	margin: 0
+}
+.f-subs {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	margin: 55px 0 0
+}
+@media only screen and (max-width: 1024px) {
+	.f-subs {
+		margin: 24px 0 0
+	}
+}
+@media only screen and (max-width: 767px) {
+	.f-subs {
+		margin: 38px 0 0;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column
+	}
+}
+@media only screen and (max-width: 1024px) {
+	.f-subs__inner {
+		-webkit-box-flex: 6;
+		-webkit-flex: 6;
+		-ms-flex: 6;
+		flex: 6
+	}
+}
+@media only screen and (max-width: 767px) {
+	.f-subs__inner {
+		-webkit-box-flex: 1;
+		-webkit-flex: auto;
+		-ms-flex: auto;
+		flex: auto
+	}
+}
+.f-subs__title {
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 700;
+	margin: 0 0 17px
+}
+@media only screen and (max-width: 1024px) {
+	.f-subs__title {
+		margin: 0 0 10px
+	}
+}
+@media only screen and (max-width: 767px) {
+	.f-subs__title {
+		margin: 0 0 17px
+	}
+}
+#mc_embed_signup #mc_embed_signup_scroll {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex
+}
+#mc_embed_signup #mc_embed_signup_scroll input.email {
+	width: 304px;
+	height: 48px;
+	padding: 0 15px;
+	border: 1px solid #d5d8db;
+	border-radius: 4px;
+	background: #fff;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box
+}
+#mc_embed_signup #mc_embed_signup_scroll .clear {
+	margin: 0 0 0 8px
+}
+#mc_embed_signup #mc_embed_signup_scroll .btn {
+	width: 160px
+}
+@media only screen and (max-width: 1024px) {
+	#mc_embed_signup #mc_embed_signup_scroll input.email {
+		width: 272px
+	}
+	#mc_embed_signup #mc_embed_signup_scroll .clear {
+		margin: 0 0 0 15px
+	}
+}
+@media only screen and (max-width: 767px) {
+	#mc_embed_signup #mc_embed_signup_scroll {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column
+	}
+	#mc_embed_signup #mc_embed_signup_scroll input.email {
+		width: 100%
+	}
+	#mc_embed_signup #mc_embed_signup_scroll .clear {
+		margin: 8px 0 0
+	}
+	#mc_embed_signup #mc_embed_signup_scroll .btn {
+		width: 100%
+	}
+}
+.f-subs__text {
+	max-width: 472px;
+	margin: 8px 0 0;
+	font-size: 14px;
+	line-height: 24px
+}
+.f-subs__text a {
+	color: #2e78c1;
+	text-decoration: none
+}
+@media only screen and (max-width: 1024px) {
+	.f-subs__text {
+		margin: 14px 0 0
+	}
+}
+@media only screen and (max-width: 767px) {
+	.f-subs__text {
+		margin: 8px 0 0
+	}
+}
+.f-subs__app {
+	display: none;
+	-webkit-box-flex: 3;
+	-webkit-flex: 3;
+	-ms-flex: 3;
+	flex: 3;
+	margin: 0 0 0 48px
+}
+.f-subs__app * {
+	position: static!important
+}
+.f-subs__app .f-iphone__btn {
+	display: block;
+	margin: 8px 0 0
+}
+@media only screen and (max-width: 1024px) {
+	.f-subs__app {
+		display: block
+	}
+}
+@media only screen and (max-width: 767px) {
+	.f-subs__app {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-flex: 1;
+		-webkit-flex: auto;
+		-ms-flex: auto;
+		flex: auto;
+		margin: 30px 0 0;
+		text-align: center
+	}
+	.f-subs__app .f-iphone__text {
+		line-height: 24px
+	}
+	.f-subs__app .f-iphone__btn {
+		margin: 17px 0 0
+	}
+}
+.f-bottom {
+	margin: 38px 0 0;
+	padding: 32px 0 0;
+	border-top: 1px solid #d5d8db
+}
+@media only screen and (max-width: 1024px) {
+	.f-bottom {
+		margin: 24px 0 0;
+		padding: 23px 0
+	}
+}
+@media only screen and (max-width: 767px) {
+	.f-bottom {
+		margin: 29px 0 0;
+		padding: 28px 0 0
+	}
+}
+.f-bottom__inner {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex
+}
+@media only screen and (max-width: 1024px) {
+	.f-bottom__inner {
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center
+	}
+}
+@media only screen and (max-width: 767px) {
+	.f-bottom__inner {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column
+	}
+}
+.f-bottom__left {
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 3.4;
+    -webkit-flex: 3.4;
+    -ms-flex: 3.4;
+    flex: 3.4;
+    color: #999;
+    white-space: nowrap;
+}
+.f-bottom__left a {
+	color: #2e78c1;
+	text-decoration: none;
+	margin: 0 0 0 32px
+}
+@media only screen and (max-width: 1024px) {
+	.f-bottom__left {
+		-webkit-box-flex: 4;
+		-webkit-flex: 4;
+		-ms-flex: 4;
+		flex: 4
+	}
+}
+@media only screen and (max-width: 767px) {
+	.f-bottom__left {
+		width: 100%;
+		-webkit-box-flex: 1;
+		-webkit-flex: auto;
+		-ms-flex: auto;
+		flex: auto;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		margin-left: 24px;
+	}
+}
+.f-socials__item {
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 2.5;
+    -webkit-flex: 2.5;
+    -ms-flex: 2.5;
+    flex: 2.5;
+    margin: -8px 0 0 12px;
+}
+@media only screen and (max-width: 1024px) {
+	.f-socials__item {
+		-webkit-box-flex: 4;
+		-webkit-flex: 4;
+		-ms-flex: 4;
+		flex: 4;
+		margin: 0 24px
+	}
+}
+@media only screen and (max-width: 767px) {
+	.f-socials__item {
+		margin: 20px 0
+	}
+}
+.f-socials__link {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	width: 32px;
+	height: 32px;
+	background: #bbbcbf;
+	border-radius: 50%;
+	margin: 0 0 0 16px
+}
+.f-socials__link:first-child {
+	margin: 0
+}
+.f-socials__link svg {
+	width: 50%;
+	max-height: 50%;
+	height: auto;
+	margin: auto;
+	fill: #fff
+}
+.f-iphone {
+	position: relative;
+	-webkit-box-flex: 3;
+	-webkit-flex: 3;
+	-ms-flex: 3;
+	flex: 3;
+	margin: -248px 0 0 12px;
+	-webkit-align-self: flex-end;
+	-ms-flex-item-align: end;
+	align-self: flex-end
+}
+@media only screen and (max-width: 1024px) {
+	.f-iphone {
+		display: none
+	}
+}
+.f-iphone__iphone {
+	display: block;
+	width: 185px;
+	height: 296px
+}
+.f-iphone__iphone img,
+.f-iphone__iphone source {
+	display: block;
+	width: 100%;
+	height: auto
+}
+.f-iphone__text {
+	position: absolute;
+	top: 10px;
+	left: 210px;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 20px
+}
+.f-iphone__btn {
+	position: absolute;
+	top: 89px;
+	left: 211px;
+	width: 100px
+}
+.f-iphone__btn img {
+	display: block;
+	width: 100%;
+	height: auto
+}
+.f-pays {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-flex: 3;
+	-webkit-flex: 3;
+	-ms-flex: 3;
+	flex: 3;
+	margin: -31px 0 0
+}
+.f-pays img {
+	display: block;
+	width: 142px;
+	height: auto
+}
+@media only screen and (max-width: 1024px) {
+	.f-pays {
+		-webkit-box-flex: 4;
+		-webkit-flex: 4;
+		-ms-flex: 4;
+		flex: 4;
+		-webkit-box-pack: start;
+		-webkit-justify-content: flex-start;
+		-ms-flex-pack: start;
+		justify-content: flex-start;
+		margin: 0
+	}
+}
+@media only screen and (max-width: 767px) {
+	.f-pays {
+		margin: 12px 0 32px
+	}
+}
+</style>
+
+</site-footer>
+
+
+
+        
+    
+
+    
+
+
+    <script>
+        if (!window.console) {
+            window.console = new function() {
+                this.log = function(str) {};
+                this.dir = function(str) {};
+            };
+        }
+
+        function gettext(msgid) {return msgid}
+    </script>
+
+    
+         
+<script src="/static/js/cookie.js?v=&quot;72fca80e&quot;"></script>
+<script src="/static/js/experience.ui.js?v=&quot;72fca80e&quot;"></script>
+<script src="/static/js/experience.form_errors.js?v=&quot;72fca80e&quot;"></script>
+
+<script src="/static/js/jquery.form.js?v=&quot;72fca80e&quot;"></script>
+<script src="/static/js/jquery.ui.widget.js?v=&quot;72fca80e&quot;"></script>
+<script src="/static/js/jquery.iframe-transport.js?v=&quot;72fca80e&quot;"></script>
+<script src="/static/js/jquery.fileupload.js?v=&quot;72fca80e&quot;"></script>
+<script src="/static/js/experience.ajaxform.js?v=&quot;72fca80e&quot;"></script>
+<script src="/static/js/experience.popup.js?v=&quot;72fca80e&quot;"></script>
+
+    
+
+    
+    <script type="text/javascript" src="/static_frontend/bundles/js/main_page_sogu.838bc884.js" ></script>
+    <script src="/static/slick/slick.min.js?v=&quot;72fca80e&quot;"></script>
+    <script>
+        $(function(){
+            $('.welcome-slider-main').slick({
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                arrows: true,
+                autoplay: true,
+                prevArrow:'<div class="welcome-slider-arrow slick-prev" data-gtmtrigger="ElementClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="left" data-eventnoninteraction="1">‹</div>',
+                nextArrow:'<div class="welcome-slider-arrow slick-next"  data-gtmtrigger="ElementClick" data-eventcategory="page_traveler_landing" data-eventaction="examples" data-eventlabel="right" data-eventnoninteraction="1">›</div>',
+                responsive: [{
+                    breakpoint: 567,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }]
+            });
+            $('.welcome-reviews-slider').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                fade: true,
+                adaptiveHeight: true,
+                prevArrow:'<div class="welcome-slider-arrow slick-prev" data-gtmtrigger="ElementClick" data-eventcategory="page_traveler_landing" data-eventaction="reviews" data-eventlabel="left" data-eventnoninteraction="1">‹</div>',
+                nextArrow:'<div class="welcome-slider-arrow slick-next" data-gtmtrigger="ElementClick" data-eventcategory="page_traveler_landing" data-eventaction="reviews" data-eventlabel="right" data-eventnoninteraction="1">›</div>',
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }]
+            });
+            //сокрытие автокомплита при тапе в любом месте страницы для ios
+            $(document).on('touchstart', function(e){
+                if (!$(e.target).closest('.typeahead').length) {  // Проверяем что элемент не внутри автокомплита
+                    $('.typeahead').blur()
+                }
+            });
+
+            $('.winter-btn .btn').on('click', function(){
+                $(this).hide();
+                $('.winter__inner').addClass('full');
+            });
+        });
+    </script>
+
+
+    <script>
+        window.Experience = window.Experience || {};
+        Experience.page_type = "landing";
+        Experience.typeaheadUrl = "/geo/typeahead/";
+
+        if (window.LazyLoad) {
+            var expLazyLoad = new LazyLoad({elements_selector: "img.lazy"});
+            document.addEventListener("DOMContentLoaded", function () {
+                expLazyLoad.update()
+            });
+        }
+    </script>
+</body>
+</html>
