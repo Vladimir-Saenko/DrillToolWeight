@@ -192,14 +192,12 @@
             this.Section.HeaderText = "Секция";
             this.Section.MinimumWidth = 100;
             this.Section.Name = "Section";
-            this.Section.ReadOnly = true;
             // 
             // Mark
             // 
             this.Mark.HeaderText = "Маркировка";
             this.Mark.MinimumWidth = 100;
             this.Mark.Name = "Mark";
-            this.Mark.ReadOnly = true;
             this.Mark.Width = 250;
             // 
             // Length
@@ -207,7 +205,6 @@
             this.Length.HeaderText = "Длина, м";
             this.Length.MinimumWidth = 80;
             this.Length.Name = "Length";
-            this.Length.ReadOnly = true;
             this.Length.Width = 80;
             // 
             // Weigth
@@ -215,7 +212,6 @@
             this.Weigth.HeaderText = "Вес, т";
             this.Weigth.MinimumWidth = 80;
             this.Weigth.Name = "Weigth";
-            this.Weigth.ReadOnly = true;
             this.Weigth.Width = 80;
             // 
             // MainForm

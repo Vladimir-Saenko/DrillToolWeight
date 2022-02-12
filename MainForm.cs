@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 using SSR;
 
 namespace DrillToolWeight
@@ -104,6 +105,5 @@ namespace DrillToolWeight
             if (value != 0)
                 ReCalculationKnbk();
         }
-
     }
 }
