@@ -1,20 +1,11 @@
-﻿using DrillToolWeight.Models;
+﻿using SSR;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
-using SSR;
 
 namespace DrillToolWeight
 {
     public partial class MainForm : Form
-    {   
+    {
         public MainForm()
         {
             InitializeComponent();
@@ -51,7 +42,7 @@ namespace DrillToolWeight
                     addDlg.resultStr.Length,
                     addDlg.resultStr.Weight
                     );
-              
+
             }
 
             ReCalculationKnbk();
@@ -61,15 +52,15 @@ namespace DrillToolWeight
         private void ReCalculationKnbk()
         {
             float sumLength = 0.0f;
-            float sumWeight = 0.0f;
-            float liquidDensity = 0.0f;
+            float sumWeight = 0.0f; 
             const float LBT = 2.78f; // плотность материала ЛБТ
             const float TB = 7.85f; // плотность материала стального инструмента
 
-            liquidDensity = SStrings.ParseToFloat(tbLiquidDensity.Text);
+            // Чтение значеия плотности ПЖ
+            float liquidDensity = SStrings.ParseToFloat(tbLiquidDensity.Text);
 
-            if (liquidDensity != 0) 
-            {            
+            if (liquidDensity != 0)
+            {
                 for (int i = 0; i < dataGridKnbk.RowCount; i++)
                 {
                     sumLength += (float)dataGridKnbk.Rows[i].Cells[2].Value;
@@ -94,7 +85,7 @@ namespace DrillToolWeight
                 }
             }
 
-            labelResult.Text = $"Длина бурильной колонны = {Math.Round(sumLength,2)} м;  " +
+            labelResult.Text = $"Длина бурильной колонны = {Math.Round(sumLength, 2)} м;  " +
                 $"Вес бурильной колонны = {Math.Round(sumWeight, 2)} т.";
 
         }
