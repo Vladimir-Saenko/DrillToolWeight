@@ -99,6 +99,7 @@ namespace DrillToolWeight
 
         }
 
+        /* Изменение значения плотности ПЖ */
         private void tbLiquidDensity_TextChanged(object sender, EventArgs e)
         {
             float value = SStrings.ParseToFloat(tbLiquidDensity.Text);
