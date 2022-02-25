@@ -93,6 +93,7 @@
             this.toolRemoveBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolRemoveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.toolRemoveBtn.ToolTipText = "Удалить секцию";
+            this.toolRemoveBtn.Click += new System.EventHandler(this.toolRemoveBtn_Click);
             // 
             // toolAboutBtn
             // 

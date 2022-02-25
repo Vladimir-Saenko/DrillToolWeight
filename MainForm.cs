@@ -105,5 +105,17 @@ namespace DrillToolWeight
             if (value != 0)
                 ReCalculationKnbk();
         }
+
+        /* Удаление строки из текущей компановки */
+        private void toolRemoveBtn_Click(object sender, EventArgs e)
+        {
+            if (dataGridKnbk.CurrentRow != null)
+            {
+                dataGridKnbk.Rows.Remove(dataGridKnbk.CurrentRow);
+                float value = SStrings.ParseToFloat(tbLiquidDensity.Text);
+                if (value != 0)
+                    ReCalculationKnbk();
+            }
+        }
     }
 }
