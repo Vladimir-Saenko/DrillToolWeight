@@ -1,11 +1,16 @@
-﻿using SSR;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using DrillToolWeight.Models;
+using SSR;
 
 namespace DrillToolWeight
 {
     public partial class MainForm : Form
     {
+        private readonly string PATH = $"{Environment.CurrentDirectory}\\currentKnbk.json";
+        private FileIOService _fileIOService;
+
         public MainForm()
         {
             InitializeComponent();
@@ -20,14 +25,64 @@ namespace DrillToolWeight
         /* Действия при загрузке главной формы */
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // загрузка последней КНБК
+            /* загрузка последней КНБК */
+
+            _fileIOService = new FileIOService(PATH); // создаем объект для чтения
+            
+            List<Knbk> currentKnbk = new List<Knbk>();
+            try
+            {
+                currentKnbk = _fileIOService.LoadData(); // читаем текущую КНБК
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message); // если ошибка чтения, то зануляем
+                currentKnbk = null;
+            }
+
+            foreach (Knbk knbk in currentKnbk) // читаем КНБК в таблицу
+            {
+                dataGridKnbk.Rows.Add(
+                    knbk.Section,
+                    knbk.Mark,
+                    knbk.Length,
+                    knbk.Weight
+                    );
+            }
+
+            ReCalculationKnbk(); // пересчитываем вес и длину КНБК
 
         }
 
         /* Действия при закрытии формы */
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // сохранение текущей КНБК
+            /* сохранение текущей КНБК */
+            _fileIOService = new FileIOService(PATH); // создаем объект для записи
+
+            List<Knbk> currentKnbk = new List<Knbk>();
+            
+            
+            for (int i = 0; i < dataGridKnbk.RowCount; i++)
+            {
+                currentKnbk.Add(new Knbk() // Добавляем следующую строку из таблицы
+                {
+                    Section = dataGridKnbk.Rows[i].Cells[0].Value.ToString(),
+                    Mark = dataGridKnbk.Rows[i].Cells[1].Value.ToString(),
+                    Length = (float)dataGridKnbk.Rows[i].Cells[2].Value,
+                    Weight = (float)dataGridKnbk.Rows[i].Cells[3].Value
+                });
+            }
+
+            try
+            {
+                _fileIOService.SaveData(currentKnbk) ; // сохраняем текущую КНБК
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); // если ошибка, то вывод ошибки
+            }
+
         }
 
         /* Добавление секции */
