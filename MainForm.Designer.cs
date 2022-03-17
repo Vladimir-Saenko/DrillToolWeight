@@ -30,7 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolAddBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolRemoveBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolSaveBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolLoadBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolAboutBtn = new System.Windows.Forms.ToolStripButton();
             this.tbLiquidDensity = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -42,13 +48,8 @@
             this.Mark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Length = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Weigth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolAddBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolRemoveBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolSaveBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolAboutBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolLoadBtn = new System.Windows.Forms.ToolStripButton();
             this.bsSections = new System.Windows.Forms.BindingSource(this.components);
+            this.saveFileDlg = new System.Windows.Forms.SaveFileDialog();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panelResult.SuspendLayout();
@@ -74,10 +75,74 @@
             this.toolStrip1.Size = new System.Drawing.Size(584, 28);
             this.toolStrip1.TabIndex = 0;
             // 
+            // toolAddBtn
+            // 
+            this.toolAddBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolAddBtn.Image = global::DrillToolWeight.Properties.Resources.Add;
+            this.toolAddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolAddBtn.Name = "toolAddBtn";
+            this.toolAddBtn.Size = new System.Drawing.Size(23, 25);
+            this.toolAddBtn.Text = "Добавить";
+            this.toolAddBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolAddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.toolAddBtn.ToolTipText = "Добавить секцию";
+            this.toolAddBtn.Click += new System.EventHandler(this.toolAddBtn_Click);
+            // 
+            // toolRemoveBtn
+            // 
+            this.toolRemoveBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolRemoveBtn.Image = global::DrillToolWeight.Properties.Resources.Remove;
+            this.toolRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolRemoveBtn.Name = "toolRemoveBtn";
+            this.toolRemoveBtn.Size = new System.Drawing.Size(23, 25);
+            this.toolRemoveBtn.Text = "Удалить";
+            this.toolRemoveBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolRemoveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.toolRemoveBtn.ToolTipText = "Удалить секцию";
+            this.toolRemoveBtn.Click += new System.EventHandler(this.toolRemoveBtn_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 28);
+            // 
+            // toolSaveBtn
+            // 
+            this.toolSaveBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolSaveBtn.Image = global::DrillToolWeight.Properties.Resources.Save;
+            this.toolSaveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolSaveBtn.Name = "toolSaveBtn";
+            this.toolSaveBtn.Size = new System.Drawing.Size(23, 25);
+            this.toolSaveBtn.Text = "Сохранить КНБК";
+            this.toolSaveBtn.Click += new System.EventHandler(this.toolSaveBtn_Click);
+            // 
+            // toolLoadBtn
+            // 
+            this.toolLoadBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolLoadBtn.Image = global::DrillToolWeight.Properties.Resources.Load;
+            this.toolLoadBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolLoadBtn.Name = "toolLoadBtn";
+            this.toolLoadBtn.Size = new System.Drawing.Size(23, 25);
+            this.toolLoadBtn.Text = "Загрузить КНБК";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 28);
+            // 
+            // toolAboutBtn
+            // 
+            this.toolAboutBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolAboutBtn.Image = global::DrillToolWeight.Properties.Resources.Info;
+            this.toolAboutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolAboutBtn.Name = "toolAboutBtn";
+            this.toolAboutBtn.Size = new System.Drawing.Size(23, 25);
+            this.toolAboutBtn.Text = "О программе";
+            this.toolAboutBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolAboutBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.toolAboutBtn.ToolTipText = "Информация о программе";
+            this.toolAboutBtn.Click += new System.EventHandler(this.toolAboutBtn_Click);
             // 
             // tbLiquidDensity
             // 
@@ -95,7 +160,7 @@
             // 
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(140, 24);
+            this.toolStripLabel1.Size = new System.Drawing.Size(140, 25);
             this.toolStripLabel1.Text = "Плотность ПЖ, г/см3 =";
             // 
             // statusStrip1
@@ -186,69 +251,6 @@
             this.Weigth.ReadOnly = true;
             this.Weigth.Width = 80;
             // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolAddBtn
-            // 
-            this.toolAddBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolAddBtn.Image = global::DrillToolWeight.Properties.Resources.Add;
-            this.toolAddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolAddBtn.Name = "toolAddBtn";
-            this.toolAddBtn.Size = new System.Drawing.Size(23, 24);
-            this.toolAddBtn.Text = "Добавить";
-            this.toolAddBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolAddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.toolAddBtn.ToolTipText = "Добавить секцию";
-            this.toolAddBtn.Click += new System.EventHandler(this.toolAddBtn_Click);
-            // 
-            // toolRemoveBtn
-            // 
-            this.toolRemoveBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolRemoveBtn.Image = global::DrillToolWeight.Properties.Resources.Remove;
-            this.toolRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolRemoveBtn.Name = "toolRemoveBtn";
-            this.toolRemoveBtn.Size = new System.Drawing.Size(23, 24);
-            this.toolRemoveBtn.Text = "Удалить";
-            this.toolRemoveBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolRemoveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.toolRemoveBtn.ToolTipText = "Удалить секцию";
-            this.toolRemoveBtn.Click += new System.EventHandler(this.toolRemoveBtn_Click);
-            // 
-            // toolSaveBtn
-            // 
-            this.toolSaveBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolSaveBtn.Image = global::DrillToolWeight.Properties.Resources.Save;
-            this.toolSaveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolSaveBtn.Name = "toolSaveBtn";
-            this.toolSaveBtn.Size = new System.Drawing.Size(23, 24);
-            this.toolSaveBtn.Text = "Сохранить КНБК";
-            // 
-            // toolAboutBtn
-            // 
-            this.toolAboutBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolAboutBtn.Image = global::DrillToolWeight.Properties.Resources.Info;
-            this.toolAboutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolAboutBtn.Name = "toolAboutBtn";
-            this.toolAboutBtn.Size = new System.Drawing.Size(23, 24);
-            this.toolAboutBtn.Text = "О программе";
-            this.toolAboutBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolAboutBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.toolAboutBtn.ToolTipText = "Информация о программе";
-            this.toolAboutBtn.Click += new System.EventHandler(this.toolAboutBtn_Click);
-            // 
-            // toolLoadBtn
-            // 
-            this.toolLoadBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolLoadBtn.Image = global::DrillToolWeight.Properties.Resources.Load;
-            this.toolLoadBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolLoadBtn.Name = "toolLoadBtn";
-            this.toolLoadBtn.Size = new System.Drawing.Size(23, 24);
-            this.toolLoadBtn.Text = "Загрузить КНБК";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,6 +299,7 @@
         private System.Windows.Forms.ToolStripButton toolSaveBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolLoadBtn;
+        private System.Windows.Forms.SaveFileDialog saveFileDlg;
     }
 }
 
