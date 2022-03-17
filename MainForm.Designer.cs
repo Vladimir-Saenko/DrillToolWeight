@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolAddBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolRemoveBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolAboutBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tbLiquidDensity = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -45,6 +42,12 @@
             this.Mark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Length = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Weigth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolAddBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolRemoveBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolSaveBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolAboutBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolLoadBtn = new System.Windows.Forms.ToolStripButton();
             this.bsSections = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -59,68 +62,32 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolAddBtn,
             this.toolRemoveBtn,
-            this.toolAboutBtn,
             this.toolStripSeparator1,
+            this.toolSaveBtn,
+            this.toolLoadBtn,
+            this.toolStripSeparator2,
+            this.toolAboutBtn,
             this.tbLiquidDensity,
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(584, 36);
+            this.toolStrip1.Size = new System.Drawing.Size(584, 28);
             this.toolStrip1.TabIndex = 0;
-            // 
-            // toolAddBtn
-            // 
-            this.toolAddBtn.Image = global::DrillToolWeight.Properties.Resources.Add;
-            this.toolAddBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.toolAddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolAddBtn.Name = "toolAddBtn";
-            this.toolAddBtn.Size = new System.Drawing.Size(67, 33);
-            this.toolAddBtn.Text = "Добавить";
-            this.toolAddBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolAddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.toolAddBtn.ToolTipText = "Добавить секцию";
-            this.toolAddBtn.Click += new System.EventHandler(this.toolAddBtn_Click);
-            // 
-            // toolRemoveBtn
-            // 
-            this.toolRemoveBtn.Image = global::DrillToolWeight.Properties.Resources.Remove;
-            this.toolRemoveBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.toolRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolRemoveBtn.Name = "toolRemoveBtn";
-            this.toolRemoveBtn.Size = new System.Drawing.Size(57, 33);
-            this.toolRemoveBtn.Text = "Удалить";
-            this.toolRemoveBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolRemoveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.toolRemoveBtn.ToolTipText = "Удалить секцию";
-            this.toolRemoveBtn.Click += new System.EventHandler(this.toolRemoveBtn_Click);
-            // 
-            // toolAboutBtn
-            // 
-            this.toolAboutBtn.Image = global::DrillToolWeight.Properties.Resources.Info;
-            this.toolAboutBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.toolAboutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolAboutBtn.Name = "toolAboutBtn";
-            this.toolAboutBtn.Size = new System.Drawing.Size(87, 33);
-            this.toolAboutBtn.Text = "О программе";
-            this.toolAboutBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolAboutBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.toolAboutBtn.ToolTipText = "Информация о программе";
-            this.toolAboutBtn.Click += new System.EventHandler(this.toolAboutBtn_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 36);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // tbLiquidDensity
             // 
             this.tbLiquidDensity.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tbLiquidDensity.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tbLiquidDensity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbLiquidDensity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbLiquidDensity.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbLiquidDensity.Name = "tbLiquidDensity";
-            this.tbLiquidDensity.Size = new System.Drawing.Size(50, 36);
+            this.tbLiquidDensity.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            this.tbLiquidDensity.Size = new System.Drawing.Size(50, 28);
             this.tbLiquidDensity.Text = "1,05";
             this.tbLiquidDensity.TextChanged += new System.EventHandler(this.tbLiquidDensity_TextChanged);
             // 
@@ -128,7 +95,7 @@
             // 
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(140, 33);
+            this.toolStripLabel1.Size = new System.Drawing.Size(140, 24);
             this.toolStripLabel1.Text = "Плотность ПЖ, г/см3 =";
             // 
             // statusStrip1
@@ -180,12 +147,12 @@
             this.Length,
             this.Weigth});
             this.dataGridKnbk.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridKnbk.Location = new System.Drawing.Point(0, 36);
+            this.dataGridKnbk.Location = new System.Drawing.Point(0, 28);
             this.dataGridKnbk.Name = "dataGridKnbk";
             this.dataGridKnbk.ReadOnly = true;
             this.dataGridKnbk.RowHeadersVisible = false;
             this.dataGridKnbk.RowTemplate.Height = 24;
-            this.dataGridKnbk.Size = new System.Drawing.Size(584, 232);
+            this.dataGridKnbk.Size = new System.Drawing.Size(584, 240);
             this.dataGridKnbk.TabIndex = 3;
             // 
             // Section
@@ -218,6 +185,69 @@
             this.Weigth.Name = "Weigth";
             this.Weigth.ReadOnly = true;
             this.Weigth.Width = 80;
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolAddBtn
+            // 
+            this.toolAddBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolAddBtn.Image = global::DrillToolWeight.Properties.Resources.Add;
+            this.toolAddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolAddBtn.Name = "toolAddBtn";
+            this.toolAddBtn.Size = new System.Drawing.Size(23, 24);
+            this.toolAddBtn.Text = "Добавить";
+            this.toolAddBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolAddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.toolAddBtn.ToolTipText = "Добавить секцию";
+            this.toolAddBtn.Click += new System.EventHandler(this.toolAddBtn_Click);
+            // 
+            // toolRemoveBtn
+            // 
+            this.toolRemoveBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolRemoveBtn.Image = global::DrillToolWeight.Properties.Resources.Remove;
+            this.toolRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolRemoveBtn.Name = "toolRemoveBtn";
+            this.toolRemoveBtn.Size = new System.Drawing.Size(23, 24);
+            this.toolRemoveBtn.Text = "Удалить";
+            this.toolRemoveBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolRemoveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.toolRemoveBtn.ToolTipText = "Удалить секцию";
+            this.toolRemoveBtn.Click += new System.EventHandler(this.toolRemoveBtn_Click);
+            // 
+            // toolSaveBtn
+            // 
+            this.toolSaveBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolSaveBtn.Image = global::DrillToolWeight.Properties.Resources.Save;
+            this.toolSaveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolSaveBtn.Name = "toolSaveBtn";
+            this.toolSaveBtn.Size = new System.Drawing.Size(23, 24);
+            this.toolSaveBtn.Text = "Сохранить КНБК";
+            // 
+            // toolAboutBtn
+            // 
+            this.toolAboutBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolAboutBtn.Image = global::DrillToolWeight.Properties.Resources.Info;
+            this.toolAboutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolAboutBtn.Name = "toolAboutBtn";
+            this.toolAboutBtn.Size = new System.Drawing.Size(23, 24);
+            this.toolAboutBtn.Text = "О программе";
+            this.toolAboutBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolAboutBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.toolAboutBtn.ToolTipText = "Информация о программе";
+            this.toolAboutBtn.Click += new System.EventHandler(this.toolAboutBtn_Click);
+            // 
+            // toolLoadBtn
+            // 
+            this.toolLoadBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolLoadBtn.Image = global::DrillToolWeight.Properties.Resources.Load;
+            this.toolLoadBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolLoadBtn.Name = "toolLoadBtn";
+            this.toolLoadBtn.Size = new System.Drawing.Size(23, 24);
+            this.toolLoadBtn.Text = "Загрузить КНБК";
             // 
             // MainForm
             // 
@@ -264,6 +294,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Mark;
         private System.Windows.Forms.DataGridViewTextBoxColumn Length;
         private System.Windows.Forms.DataGridViewTextBoxColumn Weigth;
+        private System.Windows.Forms.ToolStripButton toolSaveBtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton toolLoadBtn;
     }
 }
 
