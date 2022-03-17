@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 using DrillToolWeight.Models;
 using SSR;
@@ -57,12 +58,48 @@ namespace DrillToolWeight
         /* Действия при закрытии формы */
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            /* сохранение текущей КНБК */
-            _fileIOService = new FileIOService(PATH); // создаем объект для записи
+            bool doneFlag = SaveKnbkToFile(PATH); // сохранение текущей КНБК
+            if (!doneFlag)
+                MessageBox.Show("Ошибка: текущая КНБК не сохранена.");
+        }
+
+        /* Сохранение КНБК в архив */
+        private void toolSaveBtn_Click(object sender, EventArgs e)
+        {
+            string path = $"{Environment.CurrentDirectory}\\Knbk";
+            if (!Directory.Exists(path)) 
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            saveFileDlg.InitialDirectory = path;
+
+            if (saveFileDlg.ShowDialog() == DialogResult.OK) 
+            {
+                string fileName = saveFileDlg.FileName; // Извлекаем имя файла
+                string fileExt = Path.GetExtension(saveFileDlg.FileName).ToLower(); // Извлекаем расширение файла
+
+                if (fileExt != ".json") // Если не указано расширение ".json",
+                    fileName += ".json"; // то дописываем
+
+                bool doneFlag = SaveKnbkToFile(fileName); // сохранение КНБК
+                if (!doneFlag)
+                    MessageBox.Show("Ошибка: текущая КНБК не сохранена.");
+                                   
+                    
+            }
+
+        }
+
+        /* Сохранение КНБК */
+        private bool SaveKnbkToFile(string path) 
+        {
+            bool doneFlag = true;
+            _fileIOService = new FileIOService(path); // создаем объект для записи
 
             List<Knbk> currentKnbk = new List<Knbk>();
-            
-            
+
+
             for (int i = 0; i < dataGridKnbk.RowCount; i++)
             {
                 currentKnbk.Add(new Knbk() // Добавляем следующую строку из таблицы
@@ -76,14 +113,17 @@ namespace DrillToolWeight
 
             try
             {
-                _fileIOService.SaveData(currentKnbk) ; // сохраняем текущую КНБК
+                _fileIOService.SaveData(currentKnbk); // сохраняем текущую КНБК
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message); // если ошибка, то вывод ошибки
+                doneFlag = false;
             }
 
+            return doneFlag;
         }
+
 
         /* Добавление секции */
         private void toolAddBtn_Click(object sender, EventArgs e)
@@ -164,5 +204,7 @@ namespace DrillToolWeight
                     ReCalculationKnbk();
             }
         }
+
+      
     }
 }
