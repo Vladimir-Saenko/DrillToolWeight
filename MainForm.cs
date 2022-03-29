@@ -27,21 +27,51 @@ namespace DrillToolWeight
         private void MainForm_Load(object sender, EventArgs e)
         {
             /* загрузка последней КНБК */
+            bool doneFlag = LoadKnbkFromFile(PATH); // сохранение текущей КНБК
+            if (!doneFlag)
+                MessageBox.Show("Ошибка: текущая КНБК не найдена.");
 
-            _fileIOService = new FileIOService(PATH); // создаем объект для чтения
-            
-            List<Knbk> currentKnbk = new List<Knbk>();
+
+        }
+
+        /* Загрузка сохраненной КНБК */
+        private void ToolLoadBtn_Click(object sender, EventArgs e)
+        {
+            string path = $"{Environment.CurrentDirectory}\\Knbk"; // Выставляем путь по умолчанию
+
+            openFileDlg.InitialDirectory = path;
+            openFileDlg.Filter = "json файлы (*.json)|*.json|Все файлы (*.*)|*.*"; // фильтр
+
+            if (openFileDlg.ShowDialog() == DialogResult.OK)
+            {
+                if (File.Exists(openFileDlg.FileName)) // Если файл существует
+                {
+                    bool doneFlag = LoadKnbkFromFile(openFileDlg.FileName); // загрузка КНБК
+                    if (!doneFlag)
+                        MessageBox.Show("Ошибка загрузки КНБК.");
+                }
+                
+            }
+        }
+
+        /* Загрузка КНБК */
+        private bool LoadKnbkFromFile(string path) 
+        {
+            bool doneFlag = true;
+            _fileIOService = new FileIOService(path); // создаем объект для чтения
+
+            List<Knbk> loadKnbk = new List<Knbk>(); // выделяем память под список
             try
             {
-                currentKnbk = _fileIOService.LoadData(); // читаем текущую КНБК
+                loadKnbk = _fileIOService.LoadData(); // читаем КНБК из файла в список
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message); // если ошибка чтения, то зануляем
-                currentKnbk = null;
+                loadKnbk = null;
             }
 
-            foreach (Knbk knbk in currentKnbk) // читаем КНБК в таблицу
+            foreach (Knbk knbk in loadKnbk) // читаем КНБК из списка в таблицу
             {
                 dataGridKnbk.Rows.Add(
                     knbk.Section,
@@ -53,6 +83,7 @@ namespace DrillToolWeight
 
             ReCalculationKnbk(); // пересчитываем вес и длину КНБК
 
+            return doneFlag;
         }
 
         /* Действия при закрытии формы */
@@ -73,6 +104,7 @@ namespace DrillToolWeight
             }
 
             saveFileDlg.InitialDirectory = path;
+            saveFileDlg.Filter = "json файлы (*.json)|*.json|Все файлы (*.*)|*.*";
 
             if (saveFileDlg.ShowDialog() == DialogResult.OK) 
             {
@@ -205,6 +237,5 @@ namespace DrillToolWeight
             }
         }
 
-      
     }
 }

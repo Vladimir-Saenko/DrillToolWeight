@@ -50,6 +50,7 @@
             this.Weigth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsSections = new System.Windows.Forms.BindingSource(this.components);
             this.saveFileDlg = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDlg = new System.Windows.Forms.OpenFileDialog();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panelResult.SuspendLayout();
@@ -125,6 +126,7 @@
             this.toolLoadBtn.Name = "toolLoadBtn";
             this.toolLoadBtn.Size = new System.Drawing.Size(23, 25);
             this.toolLoadBtn.Text = "Загрузить КНБК";
+            this.toolLoadBtn.Click += new System.EventHandler(this.ToolLoadBtn_Click);
             // 
             // toolStripSeparator2
             // 
@@ -300,6 +302,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolLoadBtn;
         private System.Windows.Forms.SaveFileDialog saveFileDlg;
+        private System.Windows.Forms.OpenFileDialog openFileDlg;
     }
 }
 
