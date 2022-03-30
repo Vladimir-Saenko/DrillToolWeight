@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 using DrillToolWeight.Models;
 using SSR;
@@ -11,6 +12,14 @@ namespace DrillToolWeight
     {
         private readonly string PATH = $"{Environment.CurrentDirectory}\\currentKnbk.json";
         private FileIOService _fileIOService;
+
+        public string AssemblyVersion
+        {
+            get
+            {
+                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            }
+        } // свойство для извлечения Версии программы из AssemblyInfo
 
         public MainForm()
         {
@@ -26,6 +35,9 @@ namespace DrillToolWeight
         /* Действия при загрузке главной формы */
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // Вывод в Статус версии билда
+            statusAppVersion.Text = String.Format("Версия: {0}", AssemblyVersion);
+
             /* загрузка последней КНБК */
             bool doneFlag = LoadKnbkFromFile(PATH); // сохранение текущей КНБК
             if (!doneFlag)
