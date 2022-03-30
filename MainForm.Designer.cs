@@ -40,7 +40,7 @@
             this.tbLiquidDensity = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.statusDbLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusAppVersion = new System.Windows.Forms.ToolStripStatusLabel();
             this.panelResult = new System.Windows.Forms.Panel();
             this.labelResult = new System.Windows.Forms.Label();
             this.dataGridKnbk = new System.Windows.Forms.DataGridView();
@@ -168,18 +168,19 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusDbLabel});
+            this.statusAppVersion});
             this.statusStrip1.Location = new System.Drawing.Point(0, 292);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(584, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // statusDbLabel
+            // statusAppVersion
             // 
-            this.statusDbLabel.Name = "statusDbLabel";
-            this.statusDbLabel.Size = new System.Drawing.Size(53, 17);
-            this.statusDbLabel.Text = "v.0.0.1.0";
+            this.statusAppVersion.Name = "statusAppVersion";
+            this.statusAppVersion.RightToLeftAutoMirrorImage = true;
+            this.statusAppVersion.Size = new System.Drawing.Size(53, 17);
+            this.statusAppVersion.Text = "v.0.1.0.0";
             // 
             // panelResult
             // 
@@ -284,7 +285,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolAddBtn;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel statusDbLabel;
+        private System.Windows.Forms.ToolStripStatusLabel statusAppVersion;
         private System.Windows.Forms.ToolStripButton toolRemoveBtn;
         private System.Windows.Forms.ToolStripButton toolAboutBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
