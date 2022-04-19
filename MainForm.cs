@@ -249,5 +249,34 @@ namespace DrillToolWeight
             }
         }
 
+        /* Сдвиг строки вверх */
+        private void ToolMoveUpBtn_Click(object sender, EventArgs e)
+        {
+            if (dataGridKnbk.CurrentRow.Index > 0) 
+            {
+                DataGridViewRow row = dataGridKnbk.CurrentRow;
+                int currentRow = dataGridKnbk.CurrentCell.RowIndex;
+                int currentColumn = dataGridKnbk.CurrentCell.ColumnIndex;
+
+                dataGridKnbk.Rows.Remove(row);
+                dataGridKnbk.Rows.Insert(currentRow - 1, row);
+                dataGridKnbk.CurrentCell = dataGridKnbk.Rows[currentRow - 1].Cells[currentColumn];
+            }
+        }
+
+        /* Сдвиг строки вниз */
+        private void ToolMoveDownBtn_Click(object sender, EventArgs e)
+        {
+            if (dataGridKnbk.CurrentRow.Index < dataGridKnbk.RowCount - 1) 
+            {
+                DataGridViewRow row = dataGridKnbk.CurrentRow;
+                int currentRow = dataGridKnbk.CurrentCell.RowIndex;
+                int currentColumn = dataGridKnbk.CurrentCell.ColumnIndex;
+
+                dataGridKnbk.Rows.Remove(row);
+                dataGridKnbk.Rows.Insert(currentRow + 1, row);
+                dataGridKnbk.CurrentCell = dataGridKnbk.Rows[currentRow + 1].Cells[currentColumn];
+            }
+        }
     }
 }
