@@ -49,10 +49,11 @@
             this.toolAddBtn = new System.Windows.Forms.ToolStripButton();
             this.toolRemoveBtn = new System.Windows.Forms.ToolStripButton();
             this.toolMoveUpBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolMoveDownBtn = new System.Windows.Forms.ToolStripButton();
             this.toolSaveBtn = new System.Windows.Forms.ToolStripButton();
             this.toolLoadBtn = new System.Windows.Forms.ToolStripButton();
             this.toolAboutBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolMoveDownBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolEditBtn = new System.Windows.Forms.ToolStripButton();
             this.bsSections = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -67,6 +68,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolAddBtn,
             this.toolRemoveBtn,
+            this.toolEditBtn,
             this.toolStripSeparator1,
             this.toolMoveUpBtn,
             this.toolMoveDownBtn,
@@ -213,7 +215,7 @@
             this.toolAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolAddBtn.Name = "toolAddBtn";
             this.toolAddBtn.Size = new System.Drawing.Size(23, 25);
-            this.toolAddBtn.Text = "Добавить";
+            this.toolAddBtn.Text = "Добавить секцию";
             this.toolAddBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolAddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.toolAddBtn.ToolTipText = "Добавить секцию";
@@ -226,7 +228,7 @@
             this.toolRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolRemoveBtn.Name = "toolRemoveBtn";
             this.toolRemoveBtn.Size = new System.Drawing.Size(23, 25);
-            this.toolRemoveBtn.Text = "Удалить";
+            this.toolRemoveBtn.Text = "Удалить секцию";
             this.toolRemoveBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolRemoveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.toolRemoveBtn.ToolTipText = "Удалить секцию";
@@ -241,6 +243,16 @@
             this.toolMoveUpBtn.Size = new System.Drawing.Size(23, 25);
             this.toolMoveUpBtn.Text = "Сдвинуть строку вверх";
             this.toolMoveUpBtn.Click += new System.EventHandler(this.ToolMoveUpBtn_Click);
+            // 
+            // toolMoveDownBtn
+            // 
+            this.toolMoveDownBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolMoveDownBtn.Image = global::DrillToolWeight.Properties.Resources.Bottom;
+            this.toolMoveDownBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolMoveDownBtn.Name = "toolMoveDownBtn";
+            this.toolMoveDownBtn.Size = new System.Drawing.Size(23, 25);
+            this.toolMoveDownBtn.Text = "Сдвинуть строку вниз";
+            this.toolMoveDownBtn.Click += new System.EventHandler(this.ToolMoveDownBtn_Click);
             // 
             // toolSaveBtn
             // 
@@ -275,15 +287,15 @@
             this.toolAboutBtn.ToolTipText = "Информация о программе";
             this.toolAboutBtn.Click += new System.EventHandler(this.toolAboutBtn_Click);
             // 
-            // toolMoveDownBtn
+            // toolEditBtn
             // 
-            this.toolMoveDownBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolMoveDownBtn.Image = global::DrillToolWeight.Properties.Resources.Bottom;
-            this.toolMoveDownBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolMoveDownBtn.Name = "toolMoveDownBtn";
-            this.toolMoveDownBtn.Size = new System.Drawing.Size(23, 25);
-            this.toolMoveDownBtn.Text = "Сдвинуть строку вниз";
-            this.toolMoveDownBtn.Click += new System.EventHandler(this.ToolMoveDownBtn_Click);
+            this.toolEditBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolEditBtn.Image = global::DrillToolWeight.Properties.Resources.Edit;
+            this.toolEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolEditBtn.Name = "toolEditBtn";
+            this.toolEditBtn.Size = new System.Drawing.Size(23, 25);
+            this.toolEditBtn.Text = "Изменить длину секции";
+            this.toolEditBtn.Click += new System.EventHandler(this.ToolEditBtn_Click);
             // 
             // MainForm
             // 
@@ -338,6 +350,7 @@
         private System.Windows.Forms.ToolStripButton toolMoveUpBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton toolMoveDownBtn;
+        private System.Windows.Forms.ToolStripButton toolEditBtn;
     }
 }
 

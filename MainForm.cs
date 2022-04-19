@@ -278,5 +278,32 @@ namespace DrillToolWeight
                 dataGridKnbk.CurrentCell = dataGridKnbk.Rows[currentRow + 1].Cells[currentColumn];
             }
         }
+
+        /* Изменение длины секции */
+        private void ToolEditBtn_Click(object sender, EventArgs e)
+        {
+            /* TODO
+             * Сделать ограничение правки только для труб
+             */
+            
+            float lengthSection = Convert.ToSingle(dataGridKnbk[2, dataGridKnbk.CurrentRow.Index].Value);
+
+            EditLengthDialog editLengthDlg = new EditLengthDialog(lengthSection);
+
+            if (editLengthDlg.ShowDialog() == DialogResult.OK) 
+            {
+                if (editLengthDlg.lengthSection != 0)
+                {
+                    dataGridKnbk[2, dataGridKnbk.CurrentRow.Index].Value = editLengthDlg.lengthSection;
+                    
+                    // пересчитать вес секции
+                    ReCalculationKnbk();
+
+                }
+                
+            }
+
+
+        }
     }
 }
