@@ -64,6 +64,8 @@ namespace DrillToolWeight
                 }
                 
             }
+
+            ChangeDgvRow();
         }
 
         /* Загрузка КНБК */
@@ -185,6 +187,8 @@ namespace DrillToolWeight
             }
 
             ReCalculationKnbk();
+
+            ChangeDgvRow();
         }
 
         // Пересчет результатов
@@ -246,6 +250,8 @@ namespace DrillToolWeight
                 float value = SStrings.ParseToFloat(tbLiquidDensity.Text);
                 if (value != 0)
                     ReCalculationKnbk();
+
+                ChangeDgvRow();
             }
         }
 
@@ -261,6 +267,8 @@ namespace DrillToolWeight
                 dataGridKnbk.Rows.Remove(row);
                 dataGridKnbk.Rows.Insert(currentRow - 1, row);
                 dataGridKnbk.CurrentCell = dataGridKnbk.Rows[currentRow - 1].Cells[currentColumn];
+
+                ChangeDgvRow();
             }
         }
 
@@ -276,17 +284,17 @@ namespace DrillToolWeight
                 dataGridKnbk.Rows.Remove(row);
                 dataGridKnbk.Rows.Insert(currentRow + 1, row);
                 dataGridKnbk.CurrentCell = dataGridKnbk.Rows[currentRow + 1].Cells[currentColumn];
+
+                ChangeDgvRow();
             }
         }
 
         /* Изменение длины секции */
         private void ToolEditBtn_Click(object sender, EventArgs e)
         {
-            /* TODO
-             * Сделать ограничение правки только для труб
-             */
-            
+             
             float lengthSection = Convert.ToSingle(dataGridKnbk[2, dataGridKnbk.CurrentRow.Index].Value);
+            float weight1m = Convert.ToSingle(dataGridKnbk[3, dataGridKnbk.CurrentRow.Index].Value)/lengthSection;
 
             EditLengthDialog editLengthDlg = new EditLengthDialog(lengthSection);
 
@@ -294,9 +302,12 @@ namespace DrillToolWeight
             {
                 if (editLengthDlg.lengthSection != 0)
                 {
+                    //прописываем новую длину секции
                     dataGridKnbk[2, dataGridKnbk.CurrentRow.Index].Value = editLengthDlg.lengthSection;
-                    
-                    // пересчитать вес секции
+
+                    // пересчитываем вес секции
+                    dataGridKnbk[3, dataGridKnbk.CurrentRow.Index].Value = editLengthDlg.lengthSection * weight1m;
+
                     ReCalculationKnbk();
 
                 }
@@ -304,6 +315,54 @@ namespace DrillToolWeight
             }
 
 
+        }
+
+        /* Действия при переходе на другую строку */
+        private void ChangeDgvRow() 
+        {
+            if (dataGridKnbk.Rows.Count > 0 && dataGridKnbk.CurrentRow != null) // Если количество строк больше нуля
+            {
+                // Проверка текущей секции
+                string section = dataGridKnbk[0, dataGridKnbk.CurrentRow.Index].Value.ToString();
+                if (section == "УБТ" | section == "ТБ" | section == "ЛБТ" | section == "ОТ")
+                {
+                    toolEditBtn.Enabled = true;
+                }
+                else
+                {
+                    toolEditBtn.Enabled = false;
+                }
+
+                // Проверка номера строки
+                int index = dataGridKnbk.CurrentRow.Index;
+                if (index > 0)
+                {
+                    toolMoveUpBtn.Enabled = true;
+                }
+                else
+                {
+                    toolMoveUpBtn.Enabled = false;
+                }
+                if (index < dataGridKnbk.Rows.Count - 1)
+                {
+                    toolMoveDownBtn.Enabled = true;
+                }
+                else
+                {
+                    toolMoveDownBtn.Enabled = false;
+                }
+            }
+            else //Если таблица пуста или нет текущей строки
+            {
+                toolEditBtn.Enabled = false;
+                toolMoveUpBtn.Enabled = false;
+                toolMoveDownBtn.Enabled = false;
+            }
+        }
+
+        private void DataGridKnbk_SelectionChanged(object sender, EventArgs e)
+        {
+            ChangeDgvRow();
         }
     }
 }
