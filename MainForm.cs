@@ -85,6 +85,8 @@ namespace DrillToolWeight
                 loadKnbk = null;
             }
 
+            dataGridKnbk.Rows.Clear(); // Очищаем таблицу
+            
             foreach (Knbk knbk in loadKnbk) // читаем КНБК из списка в таблицу
             {
                 dataGridKnbk.Rows.Add(
