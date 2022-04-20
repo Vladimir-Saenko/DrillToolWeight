@@ -43,6 +43,7 @@ namespace DrillToolWeight
             if (!doneFlag)
                 MessageBox.Show("Ошибка: текущая КНБК не найдена.");
 
+            ChangeDgvRow();
 
         }
 
