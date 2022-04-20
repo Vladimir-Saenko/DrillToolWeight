@@ -363,9 +363,18 @@ namespace DrillToolWeight
             }
         }
 
+        /* Изменение позиции курсора в таблице */
         private void DataGridKnbk_SelectionChanged(object sender, EventArgs e)
         {
             ChangeDgvRow();
+        }
+
+        /* Очистка таблицы */
+        private void ToolClearBtn_Click(object sender, EventArgs e)
+        {
+            dataGridKnbk.Rows.Clear();
+            ChangeDgvRow();
+
         }
     }
 }
