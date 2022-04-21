@@ -5,6 +5,8 @@ using System.Reflection;
 using System.Windows.Forms;
 using DrillToolWeight.Models;
 using SSR;
+using IniParser;
+using IniParser.Model;
 
 namespace DrillToolWeight
 {
@@ -35,6 +37,31 @@ namespace DrillToolWeight
         /* Действия при загрузке главной формы */
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // Загрузка данных из INI-файла
+            string iniPath = $"{Environment.CurrentDirectory}\\DrillToolWeight.ini";
+            if (File.Exists(iniPath)) 
+            {
+                var parser = new FileIniDataParser();
+                IniData iniData = parser.ReadFile(iniPath);
+                string iniStr;
+
+                iniStr = iniData["UI"]["winLeft"];
+                this.Left = int.Parse(iniStr);
+
+                iniStr = iniData["UI"]["winTop"];
+                this.Top = int.Parse(iniStr);
+
+                iniStr = iniData["UI"]["winHeight"];
+                this.Height = int.Parse(iniStr);
+
+                iniStr = iniData["UI"]["winWidth"];
+                this.Width = int.Parse(iniStr);
+
+                iniStr = iniData["Values"]["liquidDensity"];
+                tbLiquidDensity.Text = iniStr;
+
+            }
+
             // Вывод в Статус версии билда
             statusAppVersion.Text = String.Format("Версия: {0}", AssemblyVersion);
 
@@ -42,7 +69,7 @@ namespace DrillToolWeight
             bool doneFlag = LoadKnbkFromFile(PATH); // сохранение текущей КНБК
             if (!doneFlag)
                 MessageBox.Show("Ошибка: текущая КНБК не найдена.");
-
+            
             ChangeDgvRow();
 
         }
@@ -109,6 +136,20 @@ namespace DrillToolWeight
             bool doneFlag = SaveKnbkToFile(PATH); // сохранение текущей КНБК
             if (!doneFlag)
                 MessageBox.Show("Ошибка: текущая КНБК не сохранена.");
+
+            // Сохранение данных в INI-файл
+            string iniPath = $"{Environment.CurrentDirectory}\\DrillToolWeight.ini";
+            var parser = new FileIniDataParser();
+            //IniData iniData = parser.ReadFile(iniPath);
+            IniData iniData = new IniData();
+            
+            iniData["UI"]["winLeft"] = this.Left.ToString();
+            iniData["UI"]["winTop"] = this.Top.ToString();
+            iniData["UI"]["winHeight"] = this.Size.Height.ToString();
+            iniData["UI"]["winWidth"] = this.Size.Width.ToString();
+            iniData["Values"]["liquidDensity"] = tbLiquidDensity.Text;
+
+            parser.WriteFile(iniPath, iniData);
         }
 
         /* Сохранение КНБК в архив */
@@ -378,10 +419,7 @@ namespace DrillToolWeight
         }
 
         /* TODO:
-         * 1. Сделать ini-файл для сохранения текущих настроек:
-         *    - положение и размер главного окна
-         *    - текущее значение удельного веса ПЖ
-         * 2. Сделать правку справочников
+         * 1. Сделать правку справочников
          */
     }
 }

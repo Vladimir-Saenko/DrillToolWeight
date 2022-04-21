@@ -262,7 +262,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(480, 400);
             this.Name = "AddSectionForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Добавить секцию";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddSectionForm_FormClosing);
             this.Load += new System.EventHandler(this.AddSectionForm_Load);
