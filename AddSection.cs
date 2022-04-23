@@ -338,6 +338,11 @@ namespace DrillToolWeight
 
         private void ApplyBtn_Click(object sender, EventArgs e)
         {
+            if (resultStr.Section == null)
+                resultStr.Section = "Нет данных";
+            if (resultStr.Mark == null)
+                resultStr.Mark = "Нет данных";
+
             resultStr.Length = SStrings.ParseToFloat(textLength.Text);
             resultStr.Weight = SStrings.ParseToFloat(textWeightSection.Text);
         }
