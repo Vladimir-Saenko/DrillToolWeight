@@ -170,6 +170,11 @@ namespace DrillToolWeight
                     textWeightSection.Enabled = true;
                     textWeight1m.Text = "";
 
+                    bsAddSection.DataSource = null;
+                    textLength.Text = "";
+                    textWeightSection.Text = "";
+                    ApplyBtn.Enabled = false;
+
                     break;
             }
 
