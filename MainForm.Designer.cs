@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tbLiquidDensity = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -46,6 +46,7 @@
             this.Weigth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saveFileDlg = new System.Windows.Forms.SaveFileDialog();
             this.openFileDlg = new System.Windows.Forms.OpenFileDialog();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolSaveBtn = new System.Windows.Forms.ToolStripButton();
             this.toolLoadBtn = new System.Windows.Forms.ToolStripButton();
             this.toolClearBtn = new System.Windows.Forms.ToolStripButton();
@@ -55,6 +56,7 @@
             this.toolMoveUpBtn = new System.Windows.Forms.ToolStripButton();
             this.toolMoveDownBtn = new System.Windows.Forms.ToolStripButton();
             this.toolAboutBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolDictBtn = new System.Windows.Forms.ToolStripButton();
             this.bsSections = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -78,23 +80,25 @@
             this.toolMoveUpBtn,
             this.toolMoveDownBtn,
             this.toolStripSeparator2,
-            this.toolAboutBtn,
             this.tbLiquidDensity,
-            this.toolStripLabel1});
+            this.toolStripLabel1,
+            this.toolDictBtn,
+            this.toolStripSeparator4,
+            this.toolAboutBtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(584, 28);
             this.toolStrip1.TabIndex = 0;
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 28);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 28);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 28);
             // 
             // toolStripSeparator2
             // 
@@ -135,7 +139,7 @@
             this.statusAppVersion.Name = "statusAppVersion";
             this.statusAppVersion.RightToLeftAutoMirrorImage = true;
             this.statusAppVersion.Size = new System.Drawing.Size(53, 17);
-            this.statusAppVersion.Text = "v.0.1.0.0";
+            this.statusAppVersion.Text = "v.1.0.0.0";
             // 
             // panelResult
             // 
@@ -210,6 +214,11 @@
             this.Weigth.Name = "Weigth";
             this.Weigth.ReadOnly = true;
             this.Weigth.Width = 80;
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 28);
             // 
             // toolSaveBtn
             // 
@@ -311,6 +320,16 @@
             this.toolAboutBtn.ToolTipText = "Информация о программе";
             this.toolAboutBtn.Click += new System.EventHandler(this.toolAboutBtn_Click);
             // 
+            // toolDictBtn
+            // 
+            this.toolDictBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolDictBtn.Image = global::DrillToolWeight.Properties.Resources.HelpBook;
+            this.toolDictBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolDictBtn.Name = "toolDictBtn";
+            this.toolDictBtn.Size = new System.Drawing.Size(23, 25);
+            this.toolDictBtn.Text = "Редактировать справочник";
+            this.toolDictBtn.Click += new System.EventHandler(this.ToolDictBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,6 +385,8 @@
         private System.Windows.Forms.ToolStripButton toolMoveDownBtn;
         private System.Windows.Forms.ToolStripButton toolEditBtn;
         private System.Windows.Forms.ToolStripButton toolClearBtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton toolDictBtn;
     }
 }
 

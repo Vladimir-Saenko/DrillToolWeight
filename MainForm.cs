@@ -418,8 +418,16 @@ namespace DrillToolWeight
 
         }
 
-        /* TODO:
+         /* TODO:
          * 1. Сделать правку справочников
          */
+        private void ToolDictBtn_Click(object sender, EventArgs e)
+        {
+            EditDictForm dictDlg = new EditDictForm();
+            dictDlg.ShowDialog();
+
+        }
+
+        
     }
 }

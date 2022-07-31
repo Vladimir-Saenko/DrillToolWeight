@@ -86,6 +86,14 @@ namespace DrillToolWeight
                     }
                     bsAddSection.DataSource = _listEngines;
 
+                    // Наименование колонок таблицы
+                    dataSections.Columns[0].HeaderText = "№";
+                    dataSections.Columns[0].Width = 30;
+                    dataSections.Columns[1].HeaderText = "Наименование";
+                    dataSections.Columns[2].HeaderText = "Тип";
+                    dataSections.Columns[3].HeaderText = "Длина,м";
+                    dataSections.Columns[4].HeaderText = "Вес, кг";
+
                     // Чтение типов в comboType
                     foreach (Engine item in _listEngines)
                     {
@@ -117,6 +125,15 @@ namespace DrillToolWeight
                     }
                     bsAddSection.DataSource = _listPipes;
 
+                    // Наименование колонок таблицы
+                    dataSections.Columns[0].HeaderText = "№";
+                    dataSections.Columns[0].Width = 30;
+                    dataSections.Columns[1].HeaderText = "Наименование";
+                    dataSections.Columns[2].HeaderText = "Тип";
+                    dataSections.Columns[3].HeaderText = "Нар.диаметр, мм";
+                    dataSections.Columns[4].HeaderText = "Вн.диаметр, мм";
+                    dataSections.Columns[5].HeaderText = "Вес 1 пог.м, кг";
+
                     // Чтение типов в comboType
                     foreach (Pipe item in _listPipes)
                     {
@@ -147,6 +164,14 @@ namespace DrillToolWeight
                         bsAddSection.ResetBindings(false);
                     }
                     bsAddSection.DataSource = _listOthers;
+
+                    // Наименование колонок таблицы
+                    dataSections.Columns[0].HeaderText = "№";
+                    dataSections.Columns[0].Width = 30;
+                    dataSections.Columns[1].HeaderText = "Наименование";
+                    dataSections.Columns[2].HeaderText = "Тип";
+                    dataSections.Columns[3].HeaderText = "Длина,м";
+                    dataSections.Columns[4].HeaderText = "Вес, кг";
 
                     // Чтение типов в comboType
                     foreach (Other item in _listOthers)
