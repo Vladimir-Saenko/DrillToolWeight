@@ -176,6 +176,7 @@ DocProject/Help/*.hhp
 DocProject/Help/Html2
 DocProject/Help/html
 [Dd]oc
+[Dd]oc/
 
 # Click-Once directory
 publish/
